@@ -1,0 +1,20 @@
+---
+title: "L'Hôpitals regel"
+tema: anvendelser-derivasjon
+undertema: lhopital
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/04-03-lhopital) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Hvorfor regelen virker (lineærisering i teller og nevner).
+- Typer ubestemte uttrykk og omskriving.
+- Fallgruver: bruk bare når uttrykket er ubestemt.

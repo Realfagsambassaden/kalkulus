@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=1.35]
+\begin{scope}
+\draw[akse] (-2.2,0) -- (2.4,0) node[right] {$x$}; \draw[akse] (0,-0.3) -- (0,2.4) node[above] {$y$};
+\draw[very thick,bla] (-2,2) -- (0,0) -- (2,2); \node[bla] at (1.3,2.1) {$|x|$};
+\node at (0,-0.7) {knekk};
+\end{scope}
+\begin{scope}[xshift=5.6cm]
+\draw[akse] (-2.2,0) -- (2.4,0) node[right] {$x$}; \draw[akse] (0,-1.6) -- (0,1.8) node[above] {$y$};
+\draw[very thick,bla,domain=-1.6:1.6,samples=80] plot (\x,{sign(\x)*abs(\x)^(1/3)}); \node[bla] at (1.2,1.5) {$\sqrt[3]{x}$};
+\draw[thick,gronn] (0,-1.5) -- (0,1.5);
+\node at (0,-2.0) {loddrett tangent};
+\end{scope}
+\end{tikzpicture}

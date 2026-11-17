@@ -1,0 +1,9 @@
+\begin{tikzpicture}[xscale=8.75,yscale=21]
+\draw[akse] (-0.45,0) -- (0.48,0) node[right] {$x$};
+\draw[akse] (0,-0.2) -- (0,0.22) node[above] {$y$};
+\draw[thick,dashed,bla,domain=-0.42:0.42,samples=80] plot (\x,{\x*\x}) node[right] {$x^2$};
+\draw[thick,dashed,bla,domain=-0.42:0.42,samples=80] plot (\x,{-\x*\x}) node[right] {$-x^2$};
+\draw[thick,rod,domain=0.03:0.42,samples=400] plot (\x,{\x*\x*sin((1/\x) r)});
+\draw[thick,rod,domain=-0.42:-0.03,samples=400] plot (\x,{\x*\x*sin((1/\x) r)});
+\node[rod] at (0.27,-0.16) {$x^2\sin\frac1x$};
+\end{tikzpicture}

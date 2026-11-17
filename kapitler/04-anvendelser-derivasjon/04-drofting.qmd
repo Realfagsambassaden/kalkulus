@@ -1,0 +1,20 @@
+---
+title: "Funksjonsdrøfting"
+tema: anvendelser-derivasjon
+undertema: drofting
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/04-04-drofting) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Førstederivert- og andrederivert-testen.
+- Kritiske punkter og endepunkter.
+- Full drøfting av en rasjonal funksjon og en funksjon med $\mathrm{e}^x$, med graf.

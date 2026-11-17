@@ -1,0 +1,143 @@
+---
+title: "Derivasjon av inverse funksjoner"
+tema: derivasjon
+undertema: inverse-derivasjon
+---
+
+<!-- video: kommer (videoer/kalkulus/03-07-inverse-funksjoner) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+Grafen til en [invers funksjon](../01-funksjoner/01-inverse-funksjoner.qmd) er speilbildet av grafen til $f$ om linja $y = x$. Speilingen bytter om rollene til $x$ og $y$, så stigningstallet $\dfrac{\Delta y}{\Delta x}$ blir til $\dfrac{\Delta x}{\Delta y}$, det omvendte. Der $f$ stiger bratt, stiger $f^{-1}$ slakt.
+
+## Formelen
+
+::: {.callout-important title="Den deriverte av en invers funksjon"}
+Er $f$ deriverbar og én-entydig, og $f'\big(f^{-1}(x)\big) \neq 0$, er
+$$
+\left(f^{-1}\right)'(x) = \frac{1}{f'\big(f^{-1}(x)\big)} .
+$$
+Med $y = f^{-1}(x)$, altså $x = f(y)$:
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{\dfrac{\mathrm{d}x}{\mathrm{d}y}} .
+$$
+:::
+
+Utledning: Deriver $f\big(f^{-1}(x)\big) = x$ med kjerneregelen:
+$$
+f'\big(f^{-1}(x)\big)\cdot\left(f^{-1}\right)'(x) = 1 .
+$$
+
+Pass på hvor den deriverte regnes ut: $f'$ skal tas i punktet $f^{-1}(x)$, ikke i $x$. Ligger $(a, b)$ på grafen til $f$, er stigningen til $f^{-1}$ i $(b, a)$ lik $\dfrac{1}{f'(a)}$.
+
+::: {.eksempel}
+**Eksempel: Uten å finne den inverse.** La $f(x) = x^3 + 2x - 1$. Finn $\left(f^{-1}\right)'(2)$.
+
+::: {.losning}
+$f'(x) = 3x^2 + 2 > 0$, så $f$ er strengt voksende og har en invers. Å løse $x^3 + 2x - 1 = y$ med hensyn på $x$ er tungvint, men det trengs ikke. Vi trenger $f^{-1}(2)$, altså $x$ med $f(x) = 2$: $x^3 + 2x - 1 = 2$ gir $x = 1$ (prøv). Da er
+$$
+\left(f^{-1}\right)'(2) = \frac{1}{f'(1)} = \frac{1}{3 + 2} = \underline{\underline{\frac15}} .
+$$
+:::
+:::
+
+## Arcusfunksjonene
+
+Nå kan vi derivere [arcusfunksjonene](../01-funksjoner/02-arcusfunksjoner.qmd).
+
+::: {.eksempel}
+**Eksempel: arcsin.** Vis at $(\arcsin x)' = \dfrac{1}{\sqrt{1 - x^2}}$ for $-1 < x < 1$.
+
+::: {.losning}
+La $y = \arcsin x$, så $x = \sin y$ med $-\tfrac{\pi}{2} \leq y \leq \tfrac{\pi}{2}$. Da er $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \cos y$, og
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{\cos y} = \frac{1}{\sqrt{1 - \sin^2 y}} = \frac{1}{\sqrt{1 - x^2}} .
+$$
+Vi valgte den positive roten fordi $\cos y \geq 0$ for $y$ i $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$. I $x = \pm 1$ er $\cos y = 0$, og der har grafen loddrett tangent.
+:::
+:::
+
+::: {.callout-important title="Derivasjon av arcusfunksjonene"}
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}, \qquad (\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}, \qquad (\arctan x)' = \frac{1}{1 + x^2} .
+$$
+:::
+
+For $\arctan$: Med $x = \tan y$ er $\dfrac{\mathrm{d}x}{\mathrm{d}y} = 1 + \tan^2 y = 1 + x^2$. At $(\arccos x)' = -(\arcsin x)'$ følger av at $\arcsin x + \arccos x = \tfrac{\pi}{2}$ er konstant.
+
+Det er bemerkelsesverdig at de deriverte er **algebraiske** uttrykk, uten trigonometriske funksjoner. Derfor dukker arcusfunksjonene opp når vi integrerer $\dfrac{1}{1 + x^2}$ og $\dfrac{1}{\sqrt{1 - x^2}}$.
+
+::: {.eksempel}
+**Eksempel: Radaren.** Et fly flyr vannrett i høyden $h = 2.0\ \mathrm{km}$ med farten $v = 250\ \mathrm{m/s}$, rett mot en radar på bakken. Elevasjonsvinkelen fra radaren er $\theta = \arctan\dfrac{h}{x}$, der $x$ er den vannrette avstanden. Hvor fort endrer vinkelen seg når $x = 4.0\ \mathrm{km}$?
+
+::: {.losning}
+Kjerneregelen med $(\arctan u)' = \dfrac{1}{1 + u^2}$ og $u = \dfrac{h}{x}$:
+$$
+\frac{\mathrm{d}\theta}{\mathrm{d}t} = \frac{1}{1 + \left(\dfrac{h}{x}\right)^2}\cdot\left(-\frac{h}{x^2}\right)\frac{\mathrm{d}x}{\mathrm{d}t} = -\frac{h}{x^2 + h^2}\,\frac{\mathrm{d}x}{\mathrm{d}t} .
+$$
+Flyet kommer nærmere, så $\dfrac{\mathrm{d}x}{\mathrm{d}t} = -250\ \mathrm{m/s}$:
+$$
+\frac{\mathrm{d}\theta}{\mathrm{d}t} = \frac{2000}{4000^2 + 2000^2}\cdot 250\ \mathrm{rad/s} = 0.025\ \mathrm{rad/s} = \underline{\underline{1.4^\circ/\mathrm{s}}} .
+$$
+:::
+:::
+
+## Prøv selv
+
+Programmet sammenligner formelen for $(\arctan x)'$ med en numerisk derivert, og tegner begge funksjonene.
+
+```{.python .kjor}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-4, 4, 400)
+plt.plot(x, np.arctan(x), label="arctan x")
+plt.plot(x, 1 / (1 + x**2), label="1/(1 + x²)")
+plt.plot(x, np.gradient(np.arctan(x), x), "k:", label="numerisk derivert")
+plt.legend(); plt.grid(alpha=0.3); plt.show()
+```
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Deriver"}
+a) $\arctan(2x)$ b) $\arcsin\sqrt{x}$ c) $x\arctan x - \tfrac12\ln(1 + x^2)$
+
+::: {.losning}
+a) $\dfrac{2}{1 + 4x^2}$
+
+b) $\dfrac{1}{\sqrt{1 - x}}\cdot\dfrac{1}{2\sqrt{x}} = \dfrac{1}{2\sqrt{x(1 - x)}}$
+
+c) $\arctan x + \dfrac{x}{1 + x^2} - \dfrac{x}{1 + x^2} = \arctan x$. Funksjonen er altså en antiderivert av $\arctan x$.
+:::
+:::
+
+::: {.oppgave tittel="Den inverse i et punkt"}
+La $f(x) = 2x + \mathrm{e}^{x}$. Finn $\left(f^{-1}\right)'(1)$.
+
+::: {.losning}
+$f(0) = 1$, så $f^{-1}(1) = 0$. $f'(x) = 2 + \mathrm{e}^x$, $f'(0) = 3$. Svaret er $\underline{\underline{\tfrac13}}$.
+:::
+:::
+
+::: {.oppgave tittel="Logaritmen på nytt" niva="Middels"}
+Bruk formelen for den deriverte av en invers til å vise at $(\ln x)' = \dfrac1x$, med utgangspunkt i $(\mathrm{e}^x)' = \mathrm{e}^x$.
+
+::: {.losning}
+$y = \ln x$ betyr $x = \mathrm{e}^y$, så $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \mathrm{e}^y = x$ og $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac1x$.
+:::
+:::
+
+::: {.oppgave tittel="arsinh" niva="Utfordrende"}
+Vis på to måter at $(\operatorname{arsinh} x)' = \dfrac{1}{\sqrt{1 + x^2}}$: med formelen for inverse funksjoner, og ved å derivere $\ln\!\left(x + \sqrt{x^2 + 1}\right)$.
+
+::: {.losning}
+*Invers:* $x = \sinh y$, $\dfrac{\mathrm{d}x}{\mathrm{d}y} = \cosh y = \sqrt{1 + \sinh^2 y} = \sqrt{1 + x^2}$ (positiv rot fordi $\cosh y > 0$).
+
+*Logaritme:*
+$$
+\frac{1 + \dfrac{x}{\sqrt{x^2 + 1}}}{x + \sqrt{x^2 + 1}} = \frac{\dfrac{\sqrt{x^2 + 1} + x}{\sqrt{x^2 + 1}}}{x + \sqrt{x^2 + 1}} = \frac{1}{\sqrt{x^2 + 1}} .
+$$
+:::
+:::
+
+::::

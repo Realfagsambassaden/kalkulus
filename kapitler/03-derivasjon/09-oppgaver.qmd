@@ -1,0 +1,67 @@
+---
+title: "Sammensatte oppgaver: derivasjon"
+tema: derivasjon
+undertema: oppgaver
+---
+
+<!-- tillegg: Claude -->
+Oppgavene krever at du kombinerer reglene: kjerneregelen inni produktregelen, implisitt derivasjon med inverse funksjoner, og middelverdisetningen sammen med tolkningen av den deriverte.
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Alle reglene på en gang" krever="derivasjon/produkt-og-kvotient, derivasjon/kjerneregelen, derivasjon/eksponential-og-trig, derivasjon/inverse-derivasjon"}
+Deriver
+
+a) $f(x) = \mathrm{e}^{-x^2}\cos(3x)$ b) $g(x) = \arctan\!\left(\dfrac{1 + x}{1 - x}\right)$ c) $h(x) = \ln\!\left(\dfrac{\sqrt{x^2 + 1}}{x^4}\right)$
+
+::: {.losning}
+a) $f'(x) = -2x\,\mathrm{e}^{-x^2}\cos 3x - 3\,\mathrm{e}^{-x^2}\sin 3x = -\mathrm{e}^{-x^2}(2x\cos 3x + 3\sin 3x)$
+
+b) Med $u = \dfrac{1 + x}{1 - x}$ er $u' = \dfrac{(1 - x) + (1 + x)}{(1 - x)^2} = \dfrac{2}{(1 - x)^2}$, og
+$$
+1 + u^2 = \frac{(1 - x)^2 + (1 + x)^2}{(1 - x)^2} = \frac{2(1 + x^2)}{(1 - x)^2} .
+$$
+Da er $g'(x) = \dfrac{u'}{1 + u^2} = \dfrac{1}{1 + x^2}$, det samme som $(\arctan x)'$. Funksjonene skiller seg med en konstant på hvert intervall der $g$ er definert (det er $\tfrac{\pi}{4}$ for $x < 1$).
+
+c) Skriv om først: $h(x) = \tfrac12\ln(x^2 + 1) - 4\ln|x|$, så $h'(x) = \dfrac{x}{x^2 + 1} - \dfrac{4}{x}$.
+:::
+:::
+
+::: {.oppgave tittel="Glidende stige og vinkel" niva="Middels" krever="derivasjon/kjerneregelen, derivasjon/inverse-derivasjon"}
+Foten av en $5.0\ \mathrm{m}$ lang stige glir bort fra veggen med $0.30\ \mathrm{m/s}$. Vinkelen mellom stigen og bakken er $\theta = \arccos\dfrac{x}{5.0}$, der $x$ er avstanden fra veggen til foten. Hvor fort endrer vinkelen seg når $x = 3.0\ \mathrm{m}$?
+
+::: {.losning}
+$$
+\frac{\mathrm{d}\theta}{\mathrm{d}t} = -\frac{1}{\sqrt{1 - (x/5)^2}}\cdot\frac{1}{5}\cdot\frac{\mathrm{d}x}{\mathrm{d}t} = -\frac{1}{\sqrt{25 - x^2}}\,\frac{\mathrm{d}x}{\mathrm{d}t} .
+$$
+Med $x = 3.0$ er $\sqrt{25 - 9} = 4.0$, så $\dfrac{\mathrm{d}\theta}{\mathrm{d}t} = -\dfrac{0.30}{4.0}\ \mathrm{rad/s} = \underline{\underline{-0.075\ \mathrm{rad/s}}}$, ca. $-4.3^\circ$ per sekund.
+:::
+:::
+
+::: {.oppgave tittel="Tangent til en kurve med ln" niva="Middels" krever="derivasjon/implisitt, derivasjon/eksponential-og-trig"}
+Kurven $y\,\mathrm{e}^{x} + \ln y = x + 1$ går gjennom punktet $(0, 1)$. Finn tangenten der.
+
+::: {.losning}
+Implisitt derivasjon:
+$$
+y'\mathrm{e}^x + y\,\mathrm{e}^x + \frac{y'}{y} = 1 .
+$$
+I $(0, 1)$: $y' + 1 + y' = 1$, så $y' = 0$. Tangenten er vannrett: $\underline{\underline{y = 1}}$.
+:::
+:::
+
+::: {.oppgave tittel="To funksjoner som er like" niva="Utfordrende" krever="derivasjon/middelverdisetningen, derivasjon/inverse-derivasjon"}
+Vis at $\arctan x + \arctan\dfrac1x = \dfrac{\pi}{2}$ for alle $x > 0$. Hva er summen for $x < 0$?
+
+::: {.losning}
+La $F(x) = \arctan x + \arctan\dfrac1x$. Da er
+$$
+F'(x) = \frac{1}{1 + x^2} + \frac{1}{1 + 1/x^2}\cdot\left(-\frac{1}{x^2}\right) = \frac{1}{1 + x^2} - \frac{1}{x^2 + 1} = 0 .
+$$
+På intervallet $(0, \infty)$ er $F$ derfor konstant (middelverdisetningen), og $F(1) = \tfrac{\pi}{4} + \tfrac{\pi}{4} = \tfrac{\pi}{2}$.
+
+På $(-\infty, 0)$ er $F$ også konstant, men det er et annet intervall, så konstanten kan være en annen: $F(-1) = -\tfrac{\pi}{4} - \tfrac{\pi}{4} = \underline{\underline{-\tfrac{\pi}{2}}}$. $F$ er ikke definert i $0$, så setningen kan ikke brukes over hele $\mathbb{R}\setminus\{0\}$ på en gang.
+:::
+:::
+
+::::

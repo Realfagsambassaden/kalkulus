@@ -1,0 +1,20 @@
+---
+title: "Trigonometriske integraler og substitusjoner"
+tema: integrasjonsteknikker
+undertema: trigonometriske
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/06-03-trigonometriske-integraler) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- $\sin^m x\cos^n x$ med identiteter.
+- Substitusjonene $x = a\sin\theta$ og $x = a\tan\theta$.
+- Areal av en sirkel og en ellipse som eksempel.

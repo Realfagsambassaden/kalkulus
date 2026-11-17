@@ -1,0 +1,33 @@
+---
+title: "Differensiallikninger"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Naturlover sier ofte hvordan noe endrer seg, ikke hva det er. Det gir differensiallikninger: avkjøling, radioaktivt henfall, svingninger og elektriske kretser. Her løser vi de viktigste typene, analytisk og numerisk.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hva er en differensiallikning, og hva betyr en løsning?
+
+2.  Hvordan løser vi separable og lineære likninger av første orden?
+
+3.  Hvordan løser vi andre ordens lineære likninger med konstante koeffisienter?
+
+4.  Hvordan løser vi en differensiallikning numerisk?
+
+:::
+
+::: {.kort}
+- **[Hva er en differensiallikning?](01-innforing.qmd)** Orden, løsninger, retningsfelt og startverdiproblemer.
+- **[Separable likninger](02-separable.qmd)** Separasjon av variabler, eksponentiell og logistisk vekst.
+- **[Lineære likninger av første orden](03-lineaere-forste-orden.qmd)** Integrerende faktor og anvendelser.
+- **[Andre ordens lineære likninger](04-andre-orden.qmd)** Karakteristisk likning, de tre tilfellene, inhomogene likninger og svingninger.
+- **[Eulers metode](05-eulers-metode.qmd)** Numerisk løsning med Eulers metode og forbedret Euler, med kjørbar Python.
+- **[Sammensatte oppgaver: differensiallikninger](06-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

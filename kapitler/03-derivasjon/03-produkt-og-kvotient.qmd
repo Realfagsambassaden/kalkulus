@@ -1,0 +1,146 @@
+---
+title: "Produkt- og kvotientregelen"
+tema: derivasjon
+undertema: produkt-og-kvotient
+---
+
+<!-- video: kommer (videoer/kalkulus/03-03-produkt-og-kvotient) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+Inntekten fra et produkt er pris ganger antall solgte. Hvis både prisen og antallet endrer seg, hvor fort endrer inntekten seg? Det er *ikke* produktet av endringsratene. Den deriverte av et produkt er litt mer interessant enn det.
+
+## Produktregelen
+
+::: {.callout-important title="Produktregelen"}
+$$
+(f\,g)' = f'\,g + f\,g'
+$$
+:::
+
+Tenk på et rektangel med sider $f(x)$ og $g(x)$. Når $x$ øker med $h$, vokser sidene med $\Delta f$ og $\Delta g$, og arealet øker med
+$$
+\Delta(fg) = (f + \Delta f)(g + \Delta g) - fg = \Delta f\cdot g + f\cdot\Delta g + \Delta f\cdot\Delta g .
+$$
+De to første leddene er to smale striper langs sidene. Det siste er et lite hjørne. Deler vi på $h$ og lar $h \to 0$, går $\dfrac{\Delta f}{h} \to f'$ og $\dfrac{\Delta g}{h} \to g'$, mens hjørnet gir $\dfrac{\Delta f}{h}\cdot\Delta g \to f'\cdot 0 = 0$ (fordi $g$ er kontinuerlig). Det som blir igjen, er $f'g + fg'$.
+
+::: {.eksempel}
+**Eksempel: Et produkt.** Deriver $p(x) = (x^2 + 1)(3x - 5)$ med produktregelen, og kontroller ved å gange ut.
+
+::: {.losning}
+Med $f = x^2 + 1$ og $g = 3x - 5$:
+$$
+p'(x) = 2x(3x - 5) + (x^2 + 1)\cdot 3 = 6x^2 - 10x + 3x^2 + 3 = 9x^2 - 10x + 3 .
+$$
+Kontroll: $p(x) = 3x^3 - 5x^2 + 3x - 5$, så $p'(x) = 9x^2 - 10x + 3$. Det stemmer.
+:::
+:::
+
+## Kvotientregelen
+
+::: {.callout-important title="Kvotientregelen"}
+$$
+\left(\frac{f}{g}\right)' = \frac{f'\,g - f\,g'}{g^2} \qquad (g \neq 0)
+$$
+:::
+
+Huskeregel: «nevneren ganger den deriverte av telleren, minus telleren ganger den deriverte av nevneren, delt på nevneren i andre». Rekkefølgen i telleren er viktig, fordi det er et minus.
+
+Regelen følger av produktregelen. Sett $q = \dfrac{f}{g}$, så $f = q\,g$. Da er $f' = q'g + qg'$, og
+$$
+q' = \frac{f' - q\,g'}{g} = \frac{f' - \dfrac{f}{g}g'}{g} = \frac{f'g - fg'}{g^2} .
+$$
+(Her har vi antatt at $q$ er deriverbar. Det kan også vises direkte fra definisjonen.)
+
+::: {.eksempel}
+**Eksempel: En rasjonal funksjon.** Deriver $f(x) = \dfrac{x^2}{x + 3}$, og finn hvor tangenten er vannrett.
+
+::: {.losning}
+$$
+f'(x) = \frac{2x(x + 3) - x^2\cdot 1}{(x + 3)^2} = \frac{x^2 + 6x}{(x + 3)^2} = \frac{x(x + 6)}{(x + 3)^2} .
+$$
+Tangenten er vannrett der telleren er null: $x = 0$ og $x = -6$. Punktene er $(0, 0)$ og $(-6, -12)$.
+:::
+:::
+
+::: {.eksempel}
+**Eksempel: Effekt i en krets.** Et batteri med elektromotorisk spenning $\mathcal{E} = 12\ \mathrm{V}$ og indre resistans $r = 0.50\ \Omega$ er koblet til en ytre resistans $R$. Effekten i den ytre resistansen er
+$$
+P(R) = \frac{\mathcal{E}^2 R}{(R + r)^2} .
+$$
+For hvilken $R$ er effekten størst?
+
+::: {.losning}
+Kvotientregelen (med $\mathcal{E}^2$ som konstant faktor):
+$$
+P'(R) = \mathcal{E}^2\,\frac{(R + r)^2 - R\cdot 2(R + r)}{(R + r)^4} = \mathcal{E}^2\,\frac{(R + r) - 2R}{(R + r)^3} = \mathcal{E}^2\,\frac{r - R}{(R + r)^3} .
+$$
+$P'(R) > 0$ for $R < r$ og $P'(R) < 0$ for $R > r$, så effekten er størst når $R = r = 0.50\ \Omega$. Da er
+$$
+P_\text{maks} = \frac{\mathcal{E}^2}{4r} = \frac{144}{2.0}\ \mathrm{W} = \underline{\underline{72\ \mathrm{W}}} .
+$$
+Dette er **tilpasningsregelen**: Største effekt overføres når den ytre resistansen er lik den indre.
+:::
+:::
+
+## Prøv selv
+
+```{.python .kjor}
+import numpy as np
+import matplotlib.pyplot as plt
+
+E, r = 12.0, 0.50
+R = np.linspace(0, 3, 400)
+P = E**2 * R / (R + r)**2
+dP = E**2 * (r - R) / (R + r)**3            # fra kvotientregelen
+dP_num = np.gradient(P, R)                   # numerisk derivert til kontroll
+
+print("største avvik mellom formel og numerisk derivert:", np.max(np.abs(dP - dP_num)[1:-1]))
+plt.plot(R, P, label="P(R)"); plt.plot(R, dP, "--", label="P'(R)")
+plt.axvline(r, color="gray", ls=":"); plt.xlabel("R (ohm)"); plt.legend(); plt.grid(alpha=0.3)
+plt.show()
+```
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Produkt og kvotient"}
+Deriver
+
+a) $f(x) = (2 - x^3)\sqrt{x}$ b) $g(x) = \dfrac{3x - 1}{2x + 5}$ c) $h(t) = \dfrac{t}{t^2 + 1}$
+
+::: {.losning}
+a) $f'(x) = -3x^2\sqrt{x} + (2 - x^3)\dfrac{1}{2\sqrt{x}} = \dfrac{-6x^3 + 2 - x^3}{2\sqrt{x}} = \dfrac{2 - 7x^3}{2\sqrt{x}}$
+
+b) $g'(x) = \dfrac{3(2x + 5) - 2(3x - 1)}{(2x + 5)^2} = \dfrac{17}{(2x + 5)^2}$
+
+c) $h'(t) = \dfrac{(t^2 + 1) - 2t^2}{(t^2 + 1)^2} = \dfrac{1 - t^2}{(t^2 + 1)^2}$
+:::
+:::
+
+::: {.oppgave tittel="Inntekt"}
+Prisen på en vare er $p(t)$ kroner og salget $q(t)$ enheter per uke. Akkurat nå er $p = 80$, $q = 1200$, prisen stiger med $2$ kr per uke og salget synker med $15$ enheter per uke. Stiger eller synker inntekten $I = p\,q$?
+
+::: {.losning}
+$I' = p'q + pq' = 2\cdot 1200 + 80\cdot(-15) = 2400 - 1200 = 1200$ kr per uke. Inntekten **stiger** med $1200$ kr per uke.
+:::
+:::
+
+::: {.oppgave tittel="Tre faktorer" niva="Middels"}
+Vis at $(fgh)' = f'gh + fg'h + fgh'$. Bruk det til å derivere $x(x - 1)(x + 2)$, og kontroller i $x = 1$.
+
+::: {.losning}
+Produktregelen to ganger: $(fgh)' = (fg)'h + (fg)h' = (f'g + fg')h + fgh'$.
+
+For $x(x - 1)(x + 2)$: $(x - 1)(x + 2) + x(x + 2) + x(x - 1)$. I $x = 1$: $0 + 3 + 0 = 3$. Kontroll: $x(x - 1)(x + 2) = x^3 + x^2 - 2x$ har derivert $3x^2 + 2x - 2$, som er $3$ i $x = 1$.
+:::
+:::
+
+::: {.oppgave tittel="Konsentrasjon i blodet" niva="Middels"}
+Konsentrasjonen av et legemiddel i blodet er $C(t) = \dfrac{6t}{t^2 + 4}$ (i $\mathrm{mg/L}$, $t$ i timer). Når er konsentrasjonen størst, og hvor stor er den?
+
+::: {.losning}
+$C'(t) = \dfrac{6(t^2 + 4) - 6t\cdot 2t}{(t^2 + 4)^2} = \dfrac{6(4 - t^2)}{(t^2 + 4)^2}$. For $t > 0$ er $C' = 0$ bare i $t = 2$, med $C' > 0$ før og $C' < 0$ etter. Størst konsentrasjon er etter $\underline{\underline{2\ \mathrm{h}}}$, med $C(2) = \dfrac{12}{8} = \underline{\underline{1.5\ \mathrm{mg/L}}}$.
+:::
+:::
+
+::::

@@ -1,0 +1,19 @@
+---
+title: "Antideriverte og ubestemt integral"
+tema: integrasjon
+undertema: ubestemt-integral
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/05-03-ubestemt-integral) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Tabell over grunnleggende integraler.
+- Integrasjonskonstanten og startverdiproblemer (fart og posisjon).

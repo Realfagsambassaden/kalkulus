@@ -1,0 +1,29 @@
+---
+title: "Inverse og elementære funksjoner"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Før vi deriverer og integrerer, trenger vi et godt lager av funksjoner: inverse funksjoner, arcusfunksjonene og de hyperbolske funksjonene. De dukker opp overalt, fra vinkler i mekanikk til kabler som henger mellom to master.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Når har en funksjon en invers, og hvordan finner vi den?
+
+2.  Hvordan definerer vi $\arcsin$, $\arccos$ og $\arctan$, og hvorfor må definisjonsmengden begrenses?
+
+3.  Hva er $\sinh$ og $\cosh$, og hvorfor kalles de hyperbolske?
+
+:::
+
+::: {.kort}
+- **[Inverse funksjoner](01-inverse-funksjoner.qmd)** Én-entydige funksjoner, speiling i $y = x$, hvordan vi løser ut x.
+- **[Arcusfunksjonene](02-arcusfunksjoner.qmd)** $\arcsin$, $\arccos$ og $\arctan$ med definisjons- og verdimengder.
+- **[Hyperbolske funksjoner](03-hyperbolske-funksjoner.qmd)** $\sinh$, $\cosh$ og $\tanh$, identiteter og kjedelinja.
+- **[Sammensatte oppgaver: inverse og elementære funksjoner](04-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

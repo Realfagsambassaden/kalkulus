@@ -1,0 +1,20 @@
+---
+title: "Potensrekker"
+tema: folger-og-rekker
+undertema: potensrekker
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/08-04-potensrekker) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Konvergensradius med forholdstesten.
+- Endepunktene.
+- Geometrisk rekke som utgangspunkt for nye rekker ($\ln(1 + x)$, $\arctan x$).

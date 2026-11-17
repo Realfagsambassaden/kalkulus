@@ -1,0 +1,36 @@
+---
+title: "Derivasjon"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Den deriverte måler hvor fort noe endrer seg: fart, vekstrate, stigningstall. Vi definerer den som en grenseverdi, utleder reglene vi regner med, og ser hvordan vi deriverer funksjoner som er gitt implisitt eller som inverser.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hva er den deriverte, og hvordan henger den sammen med tangenten?
+
+2.  Hvor kommer derivasjonsreglene fra?
+
+3.  Hvordan deriverer vi sammensatte funksjoner, implisitte kurver og inverse funksjoner?
+
+4.  Hva sier middelverdisetningen, og hvorfor er den så viktig?
+
+:::
+
+::: {.kort}
+- **[Den deriverte](01-den-deriverte.qmd)** Definisjon som grenseverdi, tangent, deriverbarhet og kontinuitet.
+- **[Derivasjonsregler](02-derivasjonsregler.qmd)** Potensregelen, summer og konstanter, høyere ordens deriverte.
+- **[Produkt- og kvotientregelen](03-produkt-og-kvotient.qmd)** Utledning og bruk.
+- **[Kjerneregelen](04-kjerneregelen.qmd)** Sammensatte funksjoner og kjerneregelen.
+- **[Derivasjon av elementære funksjoner](05-elementaere-funksjoner.qmd)** Trigonometriske, eksponential- og logaritmefunksjoner.
+- **[Implisitt derivasjon](06-implisitt-derivasjon.qmd)** Tangenter til kurver gitt ved en likning, logaritmisk derivasjon.
+- **[Derivasjon av inverse funksjoner](07-inverse-funksjoner.qmd)** Formelen for den deriverte av en invers, arcusfunksjonene.
+- **[Middelverdisetningen](08-middelverdisetningen.qmd)** Rolles teorem, middelverdisetningen og konsekvenser.
+- **[Sammensatte oppgaver: derivasjon](09-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

@@ -1,0 +1,21 @@
+---
+title: "Uegentlige integraler"
+tema: integrasjonsteknikker
+undertema: uegentlige
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/06-05-uegentlige-integraler) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Definisjon som grense, med figur.
+- Integralene $\int_1^\infty x^{-p}\,\mathrm{d}x$.
+- Sammenligningstesten.
+- Anvendelse: unnslippingsfart.

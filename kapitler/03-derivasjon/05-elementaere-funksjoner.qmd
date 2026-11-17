@@ -1,0 +1,185 @@
+---
+title: "Derivasjon av elementære funksjoner"
+tema: derivasjon
+undertema: eksponential-og-trig
+---
+
+<!-- video: kommer (videoer/kalkulus/03-05-elementaere-funksjoner) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+Svingninger beskrives med sinus og cosinus, vekst og henfall med eksponentialfunksjoner. For å regne med fart, strøm og vekstrater i slike modeller trenger vi de deriverte av $\sin x$, $\cos x$, $\mathrm{e}^x$ og $\ln x$. Her utleder vi dem. Alle andre elementære funksjoner følger av disse og reglene vi allerede har.
+
+## Sinus og cosinus
+
+::: {.callout-important title="Derivasjon av sinus og cosinus"}
+$$
+(\sin x)' = \cos x, \qquad (\cos x)' = -\sin x \qquad (x \text{ i radianer}) .
+$$
+:::
+
+Med summeformelen $\sin(x + h) = \sin x\cos h + \cos x\sin h$ blir differansekvotienten
+$$
+\frac{\sin(x + h) - \sin x}{h} = \sin x\cdot\frac{\cos h - 1}{h} + \cos x\cdot\frac{\sin h}{h} .
+$$
+Fra [grenseverdiene](../02-grenseverdier/01-grenseverdier.qmd) vet vi at $\dfrac{\sin h}{h} \to 1$ og $\dfrac{1 - \cos h}{h^2} \to \dfrac12$, så $\dfrac{\cos h - 1}{h} = -h\cdot\dfrac{1 - \cos h}{h^2} \to 0$. Dermed går differansekvotienten mot $\cos x$. Utledningen for cosinus er tilsvarende.
+
+Her er det avgjørende at vinklene er i **radianer**. Med grader blir $\dfrac{\sin h}{h} \to \dfrac{\pi}{180}$, og den faktoren ville dukket opp i alle formlene.
+
+Med kvotientregelen får vi tangens:
+$$
+(\tan x)' = \left(\frac{\sin x}{\cos x}\right)' = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} = 1 + \tan^2 x .
+$$
+
+::: {.eksempel}
+**Eksempel: Fjærpendel.** En kloss i en fjær har posisjonen $x(t) = 0.050\cos(8.0\,t)$ (i meter, $t$ i sekunder). Finn farten og akselerasjonen, og vis at $a = -\omega^2 x$.
+
+::: {.losning}
+Med kjerneregelen ($\omega = 8.0\ \mathrm{s^{-1}}$):
+$$
+v(t) = -0.050\cdot 8.0\,\sin(8.0\,t) = -0.40\sin(8.0\,t)\ \mathrm{m/s},
+$$
+$$
+a(t) = -0.40\cdot 8.0\,\cos(8.0\,t) = -3.2\cos(8.0\,t)\ \mathrm{m/s^2} .
+$$
+Siden $3.2 = 8.0^2\cdot 0.050$, er $a(t) = -64\cdot x(t) = -\omega^2 x(t)$. Akselerasjonen er alltid rettet mot likevektspunktet og er proporsjonal med utslaget. Det er kjennetegnet på en harmonisk svingning. Størst fart er $0.40\ \mathrm{m/s}$, i likevektspunktet.
+:::
+:::
+
+## Eksponentialfunksjonen
+
+For $f(x) = a^x$ er differansekvotienten
+$$
+\frac{a^{x + h} - a^x}{h} = a^x\cdot\frac{a^h - 1}{h} .
+$$
+Den deriverte er altså $a^x$ ganget med konstanten $\lim\limits_{h\to 0}\dfrac{a^h - 1}{h}$, som er stigningstallet til $a^x$ i $x = 0$. For $a = 2$ er konstanten ca. $0.693$, for $a = 3$ ca. $1.099$. Tallet $\mathrm{e} = 2.71828\ldots$ er grunntallet der konstanten er nøyaktig $1$.
+
+::: {.callout-important title="Eksponential- og logaritmefunksjonen"}
+$$
+(\mathrm{e}^x)' = \mathrm{e}^x, \qquad (\ln x)' = \frac{1}{x}\ \ (x > 0), \qquad (a^x)' = a^x\ln a .
+$$
+:::
+
+$\mathrm{e}^x$ er sin egen deriverte: Vekstraten er lik funksjonsverdien. Derfor dukker den opp overalt der noe vokser eller avtar proporsjonalt med hvor mye det er.
+
+Logaritmen: Deriver begge sider av $\mathrm{e}^{\ln x} = x$ med kjerneregelen:
+$$
+\mathrm{e}^{\ln x}\cdot(\ln x)' = 1 \quad\Longrightarrow\quad x\cdot(\ln x)' = 1 \quad\Longrightarrow\quad (\ln x)' = \frac1x .
+$$
+For $a^x$ skriver vi $a^x = \mathrm{e}^{x\ln a}$ og bruker kjerneregelen. Konstanten over er altså $\ln a$, og $\ln 2 = 0.693$.
+
+Nå kan vi også bevise **potensregelen for alle reelle eksponenter**: $x^r = \mathrm{e}^{r\ln x}$, så
+$$
+(x^r)' = \mathrm{e}^{r\ln x}\cdot\frac{r}{x} = x^r\cdot\frac{r}{x} = r\,x^{r - 1} .
+$$
+
+::: {.eksempel}
+**Eksempel: Kondensator som lades ut.** Spenningen over en kondensator som lades ut gjennom en resistans, er
+$$
+U(t) = U_0\,\mathrm{e}^{-t/\tau}, \qquad U_0 = 9.0\ \mathrm{V},\ \tau = RC = 2.0\ \mathrm{s} .
+$$
+Finn $\dfrac{\mathrm{d}U}{\mathrm{d}t}$, og vis at $\dfrac{\mathrm{d}U}{\mathrm{d}t} = -\dfrac{U}{\tau}$. Hvor fort synker spenningen etter $1.0\ \mathrm{s}$?
+
+::: {.losning}
+$$
+\frac{\mathrm{d}U}{\mathrm{d}t} = U_0\,\mathrm{e}^{-t/\tau}\cdot\left(-\frac{1}{\tau}\right) = -\frac{U(t)}{\tau} .
+$$
+Spenningen synker med en fart som er proporsjonal med spenningen selv. Etter $1.0\ \mathrm{s}$:
+$$
+\frac{\mathrm{d}U}{\mathrm{d}t} = -\frac{9.0\,\mathrm{e}^{-0.50}}{2.0}\ \mathrm{V/s} = \underline{\underline{-2.7\ \mathrm{V/s}}} .
+$$
+:::
+:::
+
+## Logaritmen gjør produkter enkle
+
+$\ln|x|$ har derivert $\dfrac1x$ for alle $x \neq 0$, også negative (bruk kjerneregelen på $\ln(-x)$). Og fordi logaritmen gjør produkter til summer, kan den gjøre derivasjon enklere. Det kalles **logaritmisk derivasjon**, og står på siden om [implisitt derivasjon](06-implisitt-derivasjon.qmd).
+
+::: {.eksempel}
+**Eksempel: Dempet svingning.** Deriver $y = \mathrm{e}^{-0.5t}\sin(3t)$ og $z = \ln\!\left(x^2 + 1\right)$.
+
+::: {.losning}
+Produkt- og kjerneregelen:
+$$
+y' = -0.5\,\mathrm{e}^{-0.5t}\sin(3t) + 3\,\mathrm{e}^{-0.5t}\cos(3t) = \mathrm{e}^{-0.5t}\big(3\cos(3t) - 0.5\sin(3t)\big) .
+$$
+Kjerneregelen med kjernen $x^2 + 1$:
+$$
+z' = \frac{2x}{x^2 + 1} .
+$$
+:::
+:::
+
+## Oversikt
+
+::: {.kort}
+- **$\sin x$** $\cos x$
+- **$\cos x$** $-\sin x$
+- **$\tan x$** $\dfrac{1}{\cos^2 x} = 1 + \tan^2 x$
+- **$\mathrm{e}^x$** $\mathrm{e}^x$
+- **$a^x$** $a^x\ln a$
+- **$\ln|x|$** $\dfrac1x$
+- **$\sinh x$, $\cosh x$** $\cosh x$ og $\sinh x$ ([hyperbolske funksjoner](../01-funksjoner/03-hyperbolske-funksjoner.qmd))
+:::
+
+## Prøv selv
+
+Programmet regner $\dfrac{a^h - 1}{h}$ for små $h$ og forskjellige grunntall $a$. For hvilket grunntall blir svaret $1$?
+
+```{.python .kjor}
+import numpy as np
+
+h = 1e-8
+for a in [2, 2.5, 2.7, 2.718, np.e, 3]:
+    print(f"a = {a:9.6f}:  (a^h - 1)/h = {(a**h - 1) / h:.6f},   ln a = {np.log(a):.6f}")
+```
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Deriver"}
+a) $x^2\mathrm{e}^{x}$ b) $\sin^2 x$ c) $\ln(\cos x)$ d) $\dfrac{\mathrm{e}^{2x}}{x}$ e) $10^{x}$
+
+::: {.losning}
+a) $2x\mathrm{e}^x + x^2\mathrm{e}^x = x(x + 2)\mathrm{e}^x$
+
+b) $2\sin x\cos x = \sin 2x$
+
+c) $\dfrac{-\sin x}{\cos x} = -\tan x$
+
+d) $\dfrac{2\mathrm{e}^{2x}x - \mathrm{e}^{2x}}{x^2} = \dfrac{(2x - 1)\mathrm{e}^{2x}}{x^2}$
+
+e) $10^x\ln 10$
+:::
+:::
+
+::: {.oppgave tittel="Vekstrate"}
+En bakteriekultur har $N(t) = 500\cdot 2^{t/20}$ bakterier etter $t$ minutter. Hvor fort vokser kulturen etter $60$ minutter?
+
+::: {.losning}
+$N'(t) = 500\cdot 2^{t/20}\cdot\dfrac{\ln 2}{20}$. Etter $60$ min er $N = 500\cdot 8 = 4000$, og
+$$
+N'(60) = 4000\cdot\frac{0.6931}{20}\ \mathrm{min^{-1}} = \underline{\underline{139\ \text{bakterier per minutt}}} .
+$$
+:::
+:::
+
+::: {.oppgave tittel="Vekselstrøm" niva="Middels"}
+Strømmen gjennom en spole er $I(t) = 2.0\sin(100\pi t)$ (i ampere). Spenningen over spolen er $U = L\,\dfrac{\mathrm{d}I}{\mathrm{d}t}$ med $L = 0.15\ \mathrm{H}$. Finn den største spenningen.
+
+::: {.losning}
+$\dfrac{\mathrm{d}I}{\mathrm{d}t} = 2.0\cdot 100\pi\cos(100\pi t)\ \mathrm{A/s}$. Den største verdien er $200\pi\ \mathrm{A/s} = 628\ \mathrm{A/s}$, så
+$$
+U_\text{maks} = 0.15\ \mathrm{H}\cdot 628\ \mathrm{A/s} = \underline{\underline{94\ \mathrm{V}}} .
+$$
+:::
+:::
+
+::: {.oppgave tittel="Gauss-kurven" niva="Utfordrende"}
+Finn hvor $f(x) = \mathrm{e}^{-x^2/2}$ har størst stigning (størst $|f'|$).
+
+::: {.losning}
+$f'(x) = -x\,\mathrm{e}^{-x^2/2}$ og $f''(x) = (x^2 - 1)\mathrm{e}^{-x^2/2}$. $|f'|$ er størst der $f'' = 0$, altså i $x = \pm 1$. Der er $|f'(\pm 1)| = \mathrm{e}^{-1/2} = 0.607$. Disse punktene er vendepunktene til klokkekurven, og de ligger ett standardavvik fra midten.
+:::
+:::
+
+::::

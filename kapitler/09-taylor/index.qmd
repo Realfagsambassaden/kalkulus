@@ -1,0 +1,29 @@
+---
+title: "Taylorpolynomer og -rekker"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Et Taylorpolynom er den beste polynomtilnærmingen til en funksjon nær et punkt. Det er slik kalkulatoren regner ut $\sin x$ og $\mathrm{e}^x$, og slik fysikere forenkler modeller.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hvordan finner vi det polynomet som ligner mest på en funksjon nær et punkt?
+
+2.  Hvor stor er feilen?
+
+3.  Når er funksjonen lik sin Taylorrekke?
+
+:::
+
+::: {.kort}
+- **[Taylorpolynomer](01-taylorpolynomer.qmd)** Konstruksjon, Maclaurinpolynomer for $\mathrm{e}^x$, $\sin x$, $\cos x$ og $\ln(1 + x)$.
+- **[Restledd og feilestimat](02-restledd.qmd)** Lagranges restledd og hvor mange ledd vi trenger.
+- **[Taylorrekker](03-taylorrekker.qmd)** Rekker for elementære funksjoner, konvergens og regning med rekker.
+- **[Sammensatte oppgaver: Taylorpolynomer og -rekker](04-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

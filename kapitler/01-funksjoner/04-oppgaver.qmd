@@ -1,0 +1,81 @@
+---
+title: "Sammensatte oppgaver: inverse og elementære funksjoner"
+tema: inverse-funksjoner
+undertema: oppgaver
+---
+
+<!-- tillegg: Claude -->
+Oppgavene bruker flere deler av temaet om gangen. Tenk gjennom hvilken funksjon som er den inverse av hvilken, og hva definisjonsmengdene blir, før du regner.
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Lyden av et fly" krever="inverse-funksjoner/inverse, eksponential-og-logaritme/logaritmer"}
+Lydnivået i desibel er $L(I) = 10\log_{10}\dfrac{I}{I_0}$, der $I$ er lydintensiteten og $I_0 = 1.0\cdot 10^{-12}\ \mathrm{W/m^2}$.
+
+a) Finn den inverse funksjonen $I(L)$.
+
+b) Hvor mange ganger større er intensiteten ved $L = 110\ \mathrm{dB}$ enn ved $L = 80\ \mathrm{dB}$?
+
+::: {.losning}
+a) $\dfrac{L}{10} = \log_{10}\dfrac{I}{I_0}$, så
+$$
+I(L) = I_0\cdot 10^{L/10} .
+$$
+
+b)
+$$
+\frac{I(110)}{I(80)} = 10^{(110 - 80)/10} = 10^3 = \underline{\underline{1000}} .
+$$
+Hver økning på $10\ \mathrm{dB}$ er en tidobling av intensiteten.
+:::
+:::
+
+::: {.oppgave tittel="Vinkelen til en stige" krever="inverse-funksjoner/arcus, trigonometri/rettvinklet"}
+En $5.0\ \mathrm{m}$ lang stige står mot en vegg med foten $x$ meter fra veggen.
+
+a) Skriv vinkelen $\theta$ mellom stigen og bakken som funksjon av $x$ med en arcusfunksjon. Hva er definisjonsmengden?
+
+b) Av sikkerhetshensyn skal vinkelen være mellom $70^\circ$ og $76^\circ$. Hvilke avstander $x$ gir det?
+
+::: {.losning}
+a) $\cos\theta = \dfrac{x}{5.0}$, så $\theta(x) = \arccos\dfrac{x}{5.0}$, med $0 \leq x \leq 5.0$ (i meter).
+
+b) Fordi $\arccos$ er avtakende, gir større vinkel kortere avstand:
+$$
+x = 5.0\cos 76^\circ = 1.2\ \mathrm{m}, \qquad x = 5.0\cos 70^\circ = 1.7\ \mathrm{m} .
+$$
+Avstanden skal være mellom $\underline{\underline{1.2\ \mathrm{m}}}$ og $\underline{\underline{1.7\ \mathrm{m}}}$.
+:::
+:::
+
+::: {.oppgave tittel="To uttrykk som er like" niva="Middels" krever="inverse-funksjoner/arcus"}
+Vis at $\arcsin x + \arccos x = \dfrac{\pi}{2}$ for alle $x$ i $[-1, 1]$.
+
+::: {.losning}
+La $\theta = \arcsin x$, så $\sin\theta = x$ og $-\tfrac{\pi}{2} \leq \theta \leq \tfrac{\pi}{2}$. Da er
+$$
+\cos\!\left(\tfrac{\pi}{2} - \theta\right) = \sin\theta = x,
+$$
+og $\tfrac{\pi}{2} - \theta$ ligger i $[0, \pi]$, som er verdimengden til $\arccos$. Derfor er $\arccos x = \tfrac{\pi}{2} - \theta = \tfrac{\pi}{2} - \arcsin x$.
+:::
+:::
+
+::: {.oppgave tittel="Kjedelinje med gitt nedheng" niva="Utfordrende" krever="inverse-funksjoner/hyperbolske, inverse-funksjoner/inverse"}
+En kabel følger $y = a\cosh\dfrac{x}{a}$ mellom to master med avstand $40\ \mathrm{m}$, og nedhenget er $4.0\ \mathrm{m}$. Da må $a$ oppfylle
+$$
+a\cosh\frac{20}{a} - a = 4.0 .
+$$
+Likningen kan ikke løses med vanlig algebra.
+
+a) Forklar hvorfor venstresiden er en avtakende funksjon av $a$ for $a > 0$, og hvorfor likningen da har nøyaktig én løsning.
+
+b) Finn $a$ med tre gjeldende siffer, f.eks. ved å prøve deg fram eller med et lite Python-program.
+
+::: {.losning}
+a) Med $u = \dfrac{20}{a}$ er venstresiden $h(a) = 20\,\dfrac{\cosh u - 1}{u}$. Funksjonen $\dfrac{\cosh u - 1}{u} = \dfrac{u}{2} + \dfrac{u^3}{24} + \ldots$ er voksende i $u$, og $u$ avtar når $a$ øker, så $h$ avtar. Når $a \to 0^+$, går $h(a) \to \infty$, og når $a \to \infty$, går $h(a) \to 0$. En kontinuerlig, strengt avtakende funksjon som går fra $\infty$ til $0$, treffer $4.0$ nøyaktig én gang.
+
+b) Prøver vi oss fram (eller halverer intervallet), får vi $h(50) = 4.05$ og $h(51) = 3.97$. En finere søking gir $\underline{\underline{a = 50.7\ \mathrm{m}}}$. Kontroll: $50.65\cosh\dfrac{20}{50.65} - 50.65 = 4.00$.
+:::
+:::
+
+::::

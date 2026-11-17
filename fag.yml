@@ -1,8 +1,12 @@
-# Om læreboka (i koden kalt «fag»). Dette er det eneste du MÅ fylle ut før læreboka dukker opp på nettsiden.
-nettsted: fysikkhjelp          # fysikkhjelp | matematikkhjelp | kjemihjelp | biologihjelp
-tittel: "Navn på læreboka"        # f.eks. "Mekanikk" eller "Kalkulus 1"
-kortnavn: navn-pa-laereboka    # brukes i nettadressen: fysikkhjelp.no/navn-pa-laereboka/
-beskrivelse: "Én setning om hva læreboka handler om og hvem den er for."
-ansvarlig: "Ditt navn"
-status: skjult                 # skjult (vises ikke) | arbeid (vises med «under arbeid») | klar
-bilde: bilder/forside.webp     # valgfritt: en tegning som vises på fagkortet
+# Om læreboka (i koden kalt «fag»).
+nettsted: matematikkhjelp
+tittel: "Kalkulus"
+kortnavn: kalkulus   # brukes i nettadressen: matematikkhjelp.no/kalkulus/
+beskrivelse: "Kalkulus i én variabel på ingeniørnivå: grenseverdier, derivasjon og integrasjon med anvendelser, rekker, Taylorpolynomer og differensiallikninger. Med figurer, eksempler, kjørbar Python og oppgaver med løsning."
+ansvarlig: "Realfagsambassaden"
+status: arbeid                 # skjult (vises ikke) | arbeid (vises med «under arbeid») | klar
+
+# PDF-kompendium (lages automatisk sammen med nettsidene)
+pdf:
+  undertittel: "Kalkulus i én variabel"
+  linje: "Ingeniørnivå · matematikkhjelp.no"

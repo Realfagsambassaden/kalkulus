@@ -1,0 +1,20 @@
+---
+title: "Andre ordens lineære likninger"
+tema: differensiallikninger
+undertema: andre-orden
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/10-04-andre-orden) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Karakteristisk likning med reelle, doble og komplekse røtter.
+- Dempede svingninger med figur.
+- Ubestemte koeffisienter for inhomogene likninger.

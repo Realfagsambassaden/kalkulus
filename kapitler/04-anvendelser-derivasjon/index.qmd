@@ -1,0 +1,34 @@
+---
+title: "Anvendelser av derivasjon"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Med den deriverte kan vi finne ekstremalpunkter, tilnærme funksjoner med rette linjer, regne ut grenseverdier som ellers er vanskelige, og løse likninger numerisk.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hvordan henger endringsratene sammen når flere størrelser endrer seg samtidig?
+
+2.  Hvordan tilnærmer vi en funksjon med en rett linje, og hvor god er tilnærmingen?
+
+3.  Hvordan finner vi topp- og bunnpunkter, og hvordan løser vi optimeringsproblemer?
+
+4.  Hvordan løser vi likninger numerisk med Newtons metode?
+
+:::
+
+::: {.kort}
+- **[Relaterte endringsrater](01-relaterte-rater.qmd)** Derivasjon med hensyn på tid når flere størrelser henger sammen (stige som sklir, ballong som fylles, skygge).
+- **[Linearisering og differensialer](02-linearisering.qmd)** Tangentlinja som tilnærming, differensialet $\mathrm{d}y = f'(x)\,\mathrm{d}x$ og feilforplantning.
+- **[L'Hôpitals regel](03-lhopital.qmd)** Ubestemte uttrykk $\tfrac00$ og $\tfrac{\infty}{\infty}$, og omskriving av $0\cdot\infty$, $\infty - \infty$ og potenser.
+- **[Funksjonsdrøfting](04-drofting.qmd)** Monotoni, ekstremalpunkter, krumning og vendepunkter, med full drøfting av eksempler.
+- **[Optimering](05-optimering.qmd)** Største og minste verdi på et intervall og praktiske optimeringsproblemer.
+- **[Newtons metode](06-newtons-metode.qmd)** Iterasjon med tangenter, konvergens og når metoden svikter.
+- **[Sammensatte oppgaver: anvendelser av derivasjon](07-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::
