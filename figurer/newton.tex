@@ -1,0 +1,11 @@
+\begin{tikzpicture}[scale=1.7]
+\draw[akse] (-0.2,0) -- (3.6,0) node[right] {$x$};
+\draw[akse] (0,-1.2) -- (0,3.4) node[above] {$y$};
+\draw[very thick,bla,domain=0.6:3.25,samples=80] plot (\x,{0.45*\x*\x-1.2}) node[right] {$y = f(x)$};
+\pgfmathsetmacro{\a}{3.0}\pgfmathsetmacro{\fa}{0.45*\a*\a-1.2}\pgfmathsetmacro{\b}{\a-\fa/(0.9*\a)}
+\pgfmathsetmacro{\fb}{0.45*\b*\b-1.2}\pgfmathsetmacro{\c}{\b-\fb/(0.9*\b)}
+\draw[thick,gronn] (\a,\fa) -- (\b,0); \draw[thick,gronn] (\b,\fb) -- (\c,0);
+\draw[dashed] (\a,0) node[below] {$x_0$} -- (\a,\fa); \fill (\a,\fa) circle (1.2pt);
+\draw[dashed] (\b,0) -- (\b,\fb); \node[below] at (\b,0) {$x_1$}; \fill (\b,\fb) circle (1.2pt);
+\node[below left] at (\c,0) {$x_2$}; \fill[rod] ({sqrt(1.2/0.45)},0) circle (1.2pt) node[above left] {$r$};
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=1.9]
+\draw[akse] (-0.2,0) -- (4.6,0) node[right] {$x$};
+\draw[akse] (0,-0.2) -- (0,2.6) node[above] {$y$};
+\draw[very thick,bla,domain=0.05:4.4,samples=80] plot (\x,{sqrt(\x)}) node[above] {$y = f(x)$};
+\draw[thick,gronn,domain=0.2:4.4] plot (\x,{1+0.5*(\x-1)}) node[right] {$y = L(x)$};
+\fill (1,1) circle (1.3pt) node[above left] {$(a, f(a))$};
+\pgfmathsetmacro{\x}{3.0}
+\draw[dashed] (\x,0) node[below] {$x$} -- (\x,{1+0.5*(\x-1)});
+\fill[bla] (\x,{sqrt(\x)}) circle (1.1pt); \fill[gronn] (\x,{1+0.5*(\x-1)}) circle (1.1pt);
+\draw[decorate,decoration={brace,amplitude=3pt}] (\x+0.06,{1+0.5*(\x-1)}) -- node[right=3pt] {feil} (\x+0.06,{sqrt(\x)});
+\draw[dashed] (1,0) node[below] {$a$} -- (1,1);
+\end{tikzpicture}
