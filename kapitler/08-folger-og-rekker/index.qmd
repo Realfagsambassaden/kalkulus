@@ -1,0 +1,32 @@
+---
+title: "Følger og rekker"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Hva betyr det å summere uendelig mange tall? Noen ganger blir summen endelig, noen ganger ikke. Konvergenstestene avgjør det, og potensrekkene gir oss en ny måte å skrive funksjoner på.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Når konvergerer en følge?
+
+2.  Når har en uendelig rekke en endelig sum?
+
+3.  Hvordan avgjør vi konvergens med tester?
+
+4.  Hva er en potensrekke, og hvor konvergerer den?
+
+:::
+
+::: {.kort}
+- **[Følger](01-folger.qmd)** Konvergens av følger, monotone og begrensede følger.
+- **[Uendelige rekker](02-uendelige-rekker.qmd)** Delsummer, geometriske rekker, divergenstesten og den harmoniske rekka.
+- **[Konvergenstester](03-konvergenstester.qmd)** Integraltesten, sammenligningstestene, forholdstesten og alternerende rekker.
+- **[Potensrekker](04-potensrekker.qmd)** Konvergensradius og -intervall, derivasjon og integrasjon ledd for ledd.
+- **[Sammensatte oppgaver: følger og rekker](05-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

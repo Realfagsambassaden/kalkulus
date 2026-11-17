@@ -1,0 +1,21 @@
+---
+title: "Riemann-summer og det bestemte integralet"
+tema: integrasjon
+undertema: riemann
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/05-01-riemann-summer) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Summer med rektangler (venstre, høyre, midtpunkt) med figur.
+- Definisjonen av det bestemte integralet.
+- Egenskaper: linearitet, additivitet, sammenligning.
+- Python som regner summene og viser konvergensen.

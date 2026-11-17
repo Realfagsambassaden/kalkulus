@@ -1,0 +1,20 @@
+---
+title: "Variabelskifte"
+tema: integrasjonsteknikker
+undertema: variabelskifte
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/06-01-variabelskifte) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Kjerneregelen baklengs.
+- Bytte av grenser i bestemte integraler.
+- Eksempler med ln, e og trigonometriske funksjoner.

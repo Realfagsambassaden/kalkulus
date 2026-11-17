@@ -1,0 +1,32 @@
+---
+title: "Grenseverdier og kontinuitet"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Grenseverdien er byggesteinen i hele kalkulus: den deriverte og integralet er begge grenseverdier. Her lærer vi å regne med grenser, hva den presise definisjonen sier, og hvorfor kontinuerlige funksjoner er så pene å jobbe med.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hva betyr det at $f(x)$ nærmer seg $L$ når $x$ nærmer seg $a$, og hvordan regner vi det ut?
+
+2.  Hvordan kan vi gjøre «nærmer seg» helt presist?
+
+3.  Hva er en kontinuerlig funksjon, og hva kan vi slutte om den?
+
+4.  Hvordan oppfører funksjoner seg når $x$ eller $f(x)$ går mot uendelig?
+
+:::
+
+::: {.kort}
+- **[Grenseverdier](01-grenseverdier.qmd)** Intuisjon, regneregler, ensidige grenser og skviseteoremet.
+- **[Den formelle definisjonen av grenseverdi](02-formell-definisjon.qmd)** Epsilon-delta-definisjonen med figur og eksempler.
+- **[Kontinuitet](03-kontinuitet.qmd)** Definisjon, typer diskontinuitet, skjæringssetningen og ekstremalverdisetningen.
+- **[Grenser mot uendelig og asymptoter](04-asymptoter.qmd)** Vertikale, horisontale og skrå asymptoter.
+- **[Sammensatte oppgaver: grenseverdier og kontinuitet](05-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

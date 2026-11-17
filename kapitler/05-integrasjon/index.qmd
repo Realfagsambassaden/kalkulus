@@ -1,0 +1,32 @@
+---
+title: "Integrasjon"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Integralet summerer små bidrag: areal, strekning fra fart, arbeid fra kraft. Fundamentalsetningen knytter integrasjon og derivasjon sammen og gjør utregningen mulig.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hvordan definerer vi det bestemte integralet som en grense av Riemann-summer?
+
+2.  Hva sier fundamentalsetningen, og hvorfor er den sann?
+
+3.  Hvordan finner vi antideriverte?
+
+4.  Hvordan regner vi ut areal mellom kurver?
+
+:::
+
+::: {.kort}
+- **[Riemann-summer og det bestemte integralet](01-riemann-summer.qmd)** Areal som grense av summer av rektangler, sigma-notasjon, egenskaper ved integralet.
+- **[Fundamentalsetningen](02-fundamentalsetningen.qmd)** Begge delene av fundamentalsetningen, med begrunnelse.
+- **[Antideriverte og ubestemt integral](03-ubestemt-integral.qmd)** Grunnleggende integraler og startverdiproblemer.
+- **[Areal mellom kurver](04-areal.qmd)** Areal mellom grafer, integrasjon langs y-aksen.
+- **[Sammensatte oppgaver: integrasjon](05-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

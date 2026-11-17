@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale=2.1]
+\draw[akse] (-0.3,0) -- (5,0) node[right] {$x$};
+\draw[akse] (0,-0.3) -- (0,4) node[above] {$y$};
+\draw[very thick,bla,domain=0.3:4.6,samples=60] plot (\x,{0.25*\x*\x - 0.3*\x + 1}) node[right] {$y = f(x)$};
+\pgfmathsetmacro{\L}{0.25*2.5*2.5-0.3*2.5+1}
+\draw[dashed] (2.5,0) node[below] {$a$} -- (2.5,\L) -- (0,\L) node[left] {$L$};
+\draw[thick,fill=white] (2.5,\L) circle (2.4pt);
+\fill[rod] (2.5,3.2) circle (2.2pt) node[right] {$f(a)$};
+\draw[->,thick,gronn] (1.4,0.35) -- (2.3,0.35); \draw[->,thick,gronn] (3.6,0.35) -- (2.7,0.35);
+\end{tikzpicture}

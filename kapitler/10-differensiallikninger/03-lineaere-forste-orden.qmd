@@ -1,0 +1,19 @@
+---
+title: "Lineære likninger av første orden"
+tema: differensiallikninger
+undertema: lineaere-forste
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/10-03-lineaere-forste-orden) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Integrerende faktor med begrunnelse.
+- RC-krets og blandeproblem.

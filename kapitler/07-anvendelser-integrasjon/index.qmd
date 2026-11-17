@@ -1,0 +1,32 @@
+---
+title: "Anvendelser av integrasjon"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+Del opp, summer, ta grensen: samme idé gir volum av rotasjonslegemer, lengden av en kurve, middelverdier og fysiske størrelser som arbeid og tyngdepunkt.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hvordan finner vi volumet av et legeme ved å skjære det i skiver?
+
+2.  Hvor lang er en kurve?
+
+3.  Hva er middelverdien av en funksjon?
+
+4.  Hvordan regner vi ut arbeid, masse og tyngdepunkt?
+
+:::
+
+::: {.kort}
+- **[Volum](01-volum.qmd)** Skivemetoden og sylinderskall, rotasjonslegemer.
+- **[Buelengde og overflateareal](02-buelengde.qmd)** Lengden av en kurve og areal av rotasjonsflater.
+- **[Middelverdi](03-middelverdi.qmd)** Middelverdien av en funksjon og middelverdisetningen for integraler.
+- **[Arbeid, masse og tyngdepunkt](04-fysiske-anvendelser.qmd)** Arbeid med variabel kraft, masse med variabel tetthet og tyngdepunkt.
+- **[Sammensatte oppgaver: anvendelser av integrasjon](05-oppgaver.qmd)** Oppgaver som knytter sammen hele kapitlet.
+:::

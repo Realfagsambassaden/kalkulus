@@ -1,0 +1,165 @@
+---
+title: "Arcusfunksjonene"
+tema: inverse-funksjoner
+undertema: arcus
+---
+
+<!-- video: kommer (videoer/kalkulus/01-02-arcusfunksjoner) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+En rampe stiger $1.2\ \mathrm{m}$ over en lengde på $10\ \mathrm{m}$. Hvor bratt er den? Stigningen er $\tan\theta = 0.12$, men vi vil ha vinkelen $\theta$. Vi trenger den inverse funksjonen til tangens. Problemet er at $\tan$, $\sin$ og $\cos$ er periodiske, og en periodisk funksjon er aldri [én-entydig](01-inverse-funksjoner.qmd). Løsningen er å velge ut én bit av grafen.
+
+## Arcus sinus
+
+På intervallet $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$ er $\sin x$ strengt voksende og tar alle verdier fra $-1$ til $1$ nøyaktig én gang. Der har den en invers.
+
+::: {.callout-note title="Definisjon: Arcus sinus"}
+For $-1 \leq x \leq 1$ er $\arcsin x$ den vinkelen $y$ i $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$ som har $\sin y = x$:
+$$
+y = \arcsin x \quad\Longleftrightarrow\quad \sin y = x \ \text{ og } \ -\tfrac{\pi}{2} \leq y \leq \tfrac{\pi}{2} .
+$$
+:::
+
+![Den tykke delen av sinusgrafen, på $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$, er én-entydig. Speilet om $y = x$ gir grafen til $\arcsin x$.](../../bilder/figurer/arcus-sin.svg){.tikz-fig fig-alt="Sinusgrafen med delen mellom minus pi halve og pi halve uthevet, og grafen til arcsin x, som er speilbildet om linja y = x og går fra (-1, -pi/2) til (1, pi/2)."}
+
+Kalkulatoren kaller den ofte $\sin^{-1}$. Den gir alltid en vinkel mellom $-90^\circ$ og $90^\circ$, også når likningen $\sin y = x$ har andre løsninger. For å finne alle løsninger av $\sin y = 0.5$ må vi selv legge til den andre løsningen $\pi - \arcsin 0.5$ og perioden $2\pi n$.
+
+## Arcus cosinus og arcus tangens
+
+Cosinus er strengt avtakende på $[0, \pi]$, og tangens er strengt voksende på $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$. Det gir de to andre arcusfunksjonene.
+
+::: {.kort}
+- **$\arcsin x$** Definert for $-1 \leq x \leq 1$. Verdier i $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$. Odde: $\arcsin(-x) = -\arcsin x$.
+- **$\arccos x$** Definert for $-1 \leq x \leq 1$. Verdier i $[0, \pi]$. Ikke odde: $\arccos(-x) = \pi - \arccos x$.
+- **$\arctan x$** Definert for alle $x$. Verdier i $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$. Vannrette asymptoter $y = \pm\tfrac{\pi}{2}$.
+:::
+
+Kjente verdier kan vi lese av enhetssirkelen:
+$$
+\arcsin\tfrac12 = \tfrac{\pi}{6}, \qquad \arccos\tfrac12 = \tfrac{\pi}{3}, \qquad \arctan 1 = \tfrac{\pi}{4}, \qquad \arccos(-1) = \pi, \qquad \arctan\sqrt3 = \tfrac{\pi}{3} .
+$$
+
+::: {.callout-important title="Arcus angrer bare på riktig intervall"}
+Det er alltid sant at $\sin(\arcsin x) = x$ for $-1 \leq x \leq 1$. Men $\arcsin(\sin x) = x$ gjelder **bare** for $-\tfrac{\pi}{2} \leq x \leq \tfrac{\pi}{2}$. For eksempel er $\arcsin\big(\sin\pi\big) = \arcsin 0 = 0$, ikke $\pi$.
+:::
+
+::: {.eksempel}
+**Eksempel: Rampen.** Hvor mange grader heller rampen som stiger $1.2\ \mathrm{m}$ på $10\ \mathrm{m}$ vannrett?
+
+::: {.losning}
+$$
+\theta = \arctan\frac{1.2}{10} = \arctan 0.12 = 0.1194\ \mathrm{rad} = \underline{\underline{6.8^\circ}}
+$$
+For små vinkler er $\arctan x \approx x$, så $0.12\ \mathrm{rad}$ er et godt overslag. Det kommer av at $\tan x \approx x$ for små $x$ (se [linearisering](../04-anvendelser-derivasjon/02-linearisering.qmd)).
+:::
+:::
+
+## Sammensetninger med trekanter
+
+Uttrykk som $\cos(\arcsin x)$ dukker opp når vi deriverer og integrerer. Tegn en rettvinklet trekant der vinkelen er $\theta = \arcsin x$, altså med motstående katet $x$ og hypotenus $1$.
+
+::: {.eksempel}
+**Eksempel: Forenkle cos(arcsin x).** Vis at $\cos(\arcsin x) = \sqrt{1 - x^2}$ for $-1 \leq x \leq 1$.
+
+::: {.losning}
+La $\theta = \arcsin x$, så $\sin\theta = x$ og $-\tfrac{\pi}{2} \leq \theta \leq \tfrac{\pi}{2}$. Fra $\sin^2\theta + \cos^2\theta = 1$ får vi $\cos\theta = \pm\sqrt{1 - x^2}$. På intervallet $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$ er $\cos\theta \geq 0$, så vi velger plusstegnet:
+$$
+\cos(\arcsin x) = \sqrt{1 - x^2} .
+$$
+I trekanten med hypotenus $1$ og motstående katet $x$ er hosliggende katet $\sqrt{1 - x^2}$ (Pytagoras), og cosinus er hosliggende delt på hypotenus. Det gir det samme.
+:::
+:::
+
+::: {.eksempel}
+**Eksempel: Synsvinkel.** Et lerret er $3.0\ \mathrm{m}$ høyt, og nederkanten er $1.0\ \mathrm{m}$ over øyehøyde. Du sitter $x$ meter fra veggen. Finn synsvinkelen $\theta(x)$ til lerretet, og regn den ut for $x = 2.0\ \mathrm{m}$.
+
+::: {.losning}
+Vinkelen opp til overkanten er $\arctan\dfrac{4.0}{x}$, og opp til nederkanten $\arctan\dfrac{1.0}{x}$. Synsvinkelen er forskjellen:
+$$
+\theta(x) = \arctan\frac{4.0}{x} - \arctan\frac{1.0}{x} .
+$$
+For $x = 2.0$:
+$$
+\theta(2.0) = \arctan 2.0 - \arctan 0.50 = 1.1071 - 0.4636 = 0.6435\ \mathrm{rad} = \underline{\underline{36.9^\circ}}
+$$
+Hvor du bør sitte for å få størst synsvinkel, er et [optimeringsproblem](../04-anvendelser-derivasjon/05-optimering.qmd).
+:::
+:::
+
+## Prøv selv
+
+Programmet tegner synsvinkelen som funksjon av avstanden. Hvor er den størst? Endre høyden på lerretet.
+
+```{.python .kjor}
+import numpy as np
+import matplotlib.pyplot as plt
+
+h_ned, h_opp = 1.0, 4.0        # nederkant og overkant over øyehøyde (m)
+x = np.linspace(0.1, 10, 500)
+theta = np.arctan(h_opp / x) - np.arctan(h_ned / x)
+
+i = np.argmax(theta)
+print(f"størst synsvinkel {np.degrees(theta[i]):.1f}° ved x = {x[i]:.2f} m")
+plt.plot(x, np.degrees(theta)); plt.plot(x[i], np.degrees(theta[i]), "o")
+plt.xlabel("avstand x (m)"); plt.ylabel("synsvinkel (grader)"); plt.grid(alpha=0.3)
+plt.show()
+```
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Eksakte verdier"}
+Finn eksakt verdi:
+
+a) $\arcsin\left(-\tfrac{\sqrt2}{2}\right)$ b) $\arccos\left(-\tfrac{\sqrt3}{2}\right)$ c) $\arctan\left(-\tfrac{1}{\sqrt3}\right)$ d) $\arcsin\left(\sin\tfrac{5\pi}{6}\right)$
+
+::: {.losning}
+a) $-\tfrac{\pi}{4}$ b) $\tfrac{5\pi}{6}$ c) $-\tfrac{\pi}{6}$
+
+d) $\sin\tfrac{5\pi}{6} = \tfrac12$, og $\arcsin\tfrac12 = \tfrac{\pi}{6}$. Svaret er $\tfrac{\pi}{6}$, ikke $\tfrac{5\pi}{6}$, fordi $\tfrac{5\pi}{6}$ ligger utenfor $\left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$.
+:::
+:::
+
+::: {.oppgave tittel="Trekant-trikset"}
+Finn eksakt verdi av $\tan\left(\arccos\tfrac35\right)$, og forenkle $\sin(\arctan x)$.
+
+::: {.losning}
+La $\theta = \arccos\tfrac35$. Hosliggende katet $3$, hypotenus $5$, så motstående katet er $4$, og $\theta$ ligger i første kvadrant:
+$$
+\tan\theta = \frac{4}{3} .
+$$
+La $\varphi = \arctan x$: motstående katet $x$, hosliggende $1$, hypotenus $\sqrt{1 + x^2}$. Siden $\cos\varphi > 0$ på $\left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$, stemmer fortegnet også for negative $x$:
+$$
+\sin(\arctan x) = \frac{x}{\sqrt{1 + x^2}} .
+$$
+:::
+:::
+
+::: {.oppgave tittel="Skråplan" niva="Middels"}
+En kloss ligger i ro på et skråplan når helningsvinkelen er mindre enn $\theta_\text{maks}$, der $\tan\theta_\text{maks} = \mu_\text{s}$ (den statiske friksjonskoeffisienten). Finn $\theta_\text{maks}$ i grader for $\mu_\text{s} = 0.45$. Hvor høyt kan den ene enden av en $2.0\ \mathrm{m}$ lang planke løftes før klossen sklir?
+
+::: {.losning}
+$$
+\theta_\text{maks} = \arctan 0.45 = 0.4229\ \mathrm{rad} = \underline{\underline{24^\circ}}
+$$
+Høyden er $h = 2.0\ \mathrm{m}\cdot\sin\theta_\text{maks} = 2.0\cdot 0.4104\ \mathrm{m} = \underline{\underline{0.82\ \mathrm{m}}}$.
+:::
+:::
+
+::: {.oppgave tittel="Tre vinkler som blir π" niva="Utfordrende"}
+Vis at $\arctan 1 + \arctan 2 + \arctan 3 = \pi$. Bruk formelen $\tan(u + v) = \dfrac{\tan u + \tan v}{1 - \tan u\tan v}$.
+
+::: {.losning}
+La $u = \arctan 2$ og $v = \arctan 3$. Da er
+$$
+\tan(u + v) = \frac{2 + 3}{1 - 6} = -1 .
+$$
+Både $u$ og $v$ ligger mellom $\tfrac{\pi}{4}$ og $\tfrac{\pi}{2}$ (fordi $2 > 1$ og $3 > 1$), så $\tfrac{\pi}{2} < u + v < \pi$. Den eneste vinkelen der med tangens $-1$ er $\tfrac{3\pi}{4}$. Dermed er
+$$
+\arctan 1 + \arctan 2 + \arctan 3 = \frac{\pi}{4} + \frac{3\pi}{4} = \pi .
+$$
+Legg merke til at vi ikke kunne skrive $u + v = \arctan(-1) = -\tfrac{\pi}{4}$: arctan gir bare vinkler mellom $-\tfrac{\pi}{2}$ og $\tfrac{\pi}{2}$.
+:::
+:::
+
+::::

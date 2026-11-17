@@ -1,0 +1,34 @@
+---
+title: "Integrasjonsteknikker"
+toc: false
+---
+
+<!-- tillegg: Claude -->
+::: {.intro}
+
+De fleste integraler kan ikke slås opp direkte. Her samler vi verktøyene: variabelskifte, delvis integrasjon, trigonometriske integraler og delbrøkoppspalting, uegentlige integraler, og numerisk integrasjon når ingen formel finnes.
+
+:::
+
+::: {.spm}
+[Spørsmål vi jobber med i dette kapitlet]{.spm-tittel}
+
+1.  Hvordan velger vi riktig teknikk for et integral?
+
+2.  Hvordan integrerer vi rasjonale funksjoner og trigonometriske uttrykk?
+
+3.  Hva betyr et integral over et uendelig intervall?
+
+4.  Hvordan regner vi ut integraler numerisk, og hvor stor er feilen?
+
+:::
+
+::: {.kort}
+- **[Variabelskifte](01-variabelskifte.qmd)** Substitusjon i ubestemte og bestemte integraler.
+- **[Delvis integrasjon](02-delvis-integrasjon.qmd)** Produktregelen baklengs, gjentatt delvis integrasjon og triks med $\mathrm{e}^x\sin x$.
+- **[Trigonometriske integraler og substitusjoner](03-trigonometriske-integraler.qmd)** Potenser av sin og cos, og trigonometrisk substitusjon for kvadratrøtter.
+- **[Delbrøkoppspalting](04-delbrokoppspalting.qmd)** Rasjonale funksjoner med lineære og kvadratiske faktorer.
+- **[Uegentlige integraler](05-uegentlige-integraler.qmd)** Uendelige intervaller og ubegrensede integrander, sammenligningstester.
+- **[Numerisk integrasjon](06-numerisk-integrasjon.qmd)** Trapes- og Simpsons metode med feilestimater og kjørbar Python.
+- **[Sammensatte oppgaver: integrasjonsteknikker](07-oppgaver.qmd)** Oppgaver der studenten selv må velge teknikk.
+:::

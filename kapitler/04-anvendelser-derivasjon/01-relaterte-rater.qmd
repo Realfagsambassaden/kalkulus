@@ -1,0 +1,20 @@
+---
+title: "Relaterte endringsrater"
+tema: anvendelser-derivasjon
+undertema: relaterte-rater
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/04-01-relaterte-rater) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Strategi i steg: figur, likning, deriver med hensyn på t, sett inn.
+- Eksempler: stige mot vegg, kjegleformet tank som fylles, avstand mellom to biler.
+- Python som sjekker svaret numerisk.

@@ -1,0 +1,20 @@
+---
+title: "Areal mellom kurver"
+tema: integrasjon
+undertema: areal
+plassholder: true
+---
+
+<!-- video: kommer (videoer/kalkulus/05-04-areal) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Areal mellom to kurver med figur.
+- Når kurvene krysser hverandre.
+- Integrasjon med hensyn på y.

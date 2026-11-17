@@ -1,0 +1,16 @@
+---
+title: "Sammensatte oppgaver: differensiallikninger"
+tema: differensiallikninger
+undertema: oppgaver
+plassholder: true
+---
+
+<!-- tillegg: Claude -->
+::: {.callout-note title="Kommer snart"}
+Denne siden skrives nå. Innholdet kommer snart.
+:::
+
+## Dette kommer på siden
+
+- Modellering og løsning
+- Analytisk og numerisk løsning sammenlignet

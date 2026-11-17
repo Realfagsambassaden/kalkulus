@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=2.19]
+\draw[akse] (-2.3,0) -- (2.4,0) node[right] {$x$};
+\draw[akse] (0,-2.3) -- (0,2.4) node[above] {$y$};
+\draw[dashed] (-2.1,-2.1) -- (2.1,2.1);
+\draw[thin,gray,domain=-2.2:2.2,samples=80] plot (\x,{sin(\x r)});
+\draw[very thick,bla,domain=-pi/2:pi/2,samples=60] plot (\x,{sin(\x r)});
+\draw[very thick,rod,domain=-1:1,samples=80] plot (\x,{asin(\x)*pi/180});
+\node[bla] at (2.0,0.75) {$\sin x$};
+\node[rod] at (0.55,1.85) {$\arcsin x$};
+\foreach \p/\t in {1.5708/{\frac{\pi}{2}},-1.5708/{-\frac{\pi}{2}}} {\draw (\p,-0.05) -- (\p,0.05); \draw (-0.05,\p) -- (0.05,\p);}
+\node[below] at (1.5708,-0.05) {$\tfrac{\pi}{2}$}; \node[left] at (-0.05,1.5708) {$\tfrac{\pi}{2}$};
+\node[above] at (-1.5708,0.05) {$-\tfrac{\pi}{2}$}; \node[right] at (0.05,-1.5708) {$-\tfrac{\pi}{2}$};
+\fill[bla] (1.5708,1) circle (1.6pt); \fill[bla] (-1.5708,-1) circle (1.6pt);
+\fill[rod] (1,1.5708) circle (1.6pt); \fill[rod] (-1,-1.5708) circle (1.6pt);
+\end{tikzpicture}

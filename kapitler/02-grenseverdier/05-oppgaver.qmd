@@ -1,0 +1,64 @@
+---
+title: "Sammensatte oppgaver: grenseverdier og kontinuitet"
+tema: grenseverdier
+undertema: oppgaver
+---
+
+<!-- tillegg: Claude -->
+Her må du selv avgjøre hvilket verktøy som passer: forkorte, utvide med den konjugerte, dele på den høyeste potensen, skvise eller bruke kontinuitet.
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Blandede grenser" krever="grenseverdier/grenseverdier, grenseverdier/asymptoter"}
+a) $\displaystyle\lim_{x\to 4}\frac{\sqrt{x} - 2}{x - 4}$ b) $\displaystyle\lim_{x\to 0}\frac{\sin 3x}{\sin 7x}$ c) $\displaystyle\lim_{x\to\infty}\frac{\mathrm{e}^{x} + x}{2\mathrm{e}^{x} - 1}$
+
+::: {.losning}
+a) $x - 4 = (\sqrt{x} - 2)(\sqrt{x} + 2)$, så brøken er $\dfrac{1}{\sqrt{x} + 2} \to \underline{\underline{\dfrac14}}$.
+
+b) $\dfrac{\sin 3x}{\sin 7x} = \dfrac{3}{7}\cdot\dfrac{\sin 3x}{3x}\cdot\dfrac{7x}{\sin 7x} \to \underline{\underline{\dfrac37}}$.
+
+c) Del på $\mathrm{e}^x$: $\dfrac{1 + x\mathrm{e}^{-x}}{2 - \mathrm{e}^{-x}} \to \dfrac{1 + 0}{2} = \underline{\underline{\dfrac12}}$, fordi $x\mathrm{e}^{-x} = \dfrac{x}{\mathrm{e}^x} \to 0$.
+:::
+:::
+
+::: {.oppgave tittel="Kontinuerlig og med asymptote" niva="Middels" krever="grenseverdier/kontinuitet, grenseverdier/asymptoter"}
+La $f(x) = \dfrac{x^2 + ax + b}{x - 2}$ for $x \neq 2$.
+
+a) Finn $a$ og $b$ slik at $\lim\limits_{x\to 2} f(x) = 5$.
+
+b) Med disse verdiene: Hvordan må $f(2)$ defineres for at $f$ skal bli kontinuerlig, og hvilken asymptote har grafen?
+
+::: {.losning}
+a) For at grensen skal finnes, må telleren være $0$ i $x = 2$: $4 + 2a + b = 0$. Da er $x = 2$ en rot, og $x^2 + ax + b = (x - 2)(x + c)$ med $-2c = b$ og $c - 2 = a$. Brøken blir $x + c \to 2 + c = 5$, så $c = 3$, $\underline{\underline{a = 1}}$ og $\underline{\underline{b = -6}}$.
+
+b) $f(x) = x + 3$ for $x \neq 2$, så vi må sette $f(2) = 5$. Da er $f(x) = x + 3$ overalt, og grafen er en rett linje, uten asymptoter.
+:::
+:::
+
+::: {.oppgave tittel="Halveringsmetoden" niva="Middels" krever="grenseverdier/kontinuitet, inverse-funksjoner/hyperbolske"}
+Vis at $\cosh x = 2x$ har en løsning mellom $0$ og $1$. Hvor mange halveringer trengs for å finne den med en feil mindre enn $10^{-4}$?
+
+::: {.losning}
+$g(x) = \cosh x - 2x$ er kontinuerlig, $g(0) = 1 > 0$ og $g(1) = 1.543 - 2 = -0.457 < 0$. Skjæringssetningen gir en løsning i $(0, 1)$.
+
+Etter $n$ halveringer er intervallet $2^{-n}$ langt. Tar vi midtpunktet, er feilen høyst $2^{-n-1}$. Vi trenger $2^{-n-1} < 10^{-4}$, altså $n + 1 > \dfrac{4}{\log_{10} 2} = 13.3$, så $\underline{\underline{n = 13}}$ halveringer. (Løsningen er $x \approx 0.5894$.)
+:::
+:::
+
+::: {.oppgave tittel="Arealet av en mangekant" niva="Utfordrende" krever="grenseverdier/grenseverdier"}
+En regulær $n$-kant er innskrevet i en sirkel med radius $r$. Arealet er
+$$
+A_n = \frac{n}{2}\,r^2\sin\frac{2\pi}{n} .
+$$
+Finn $\lim\limits_{n\to\infty} A_n$, og forklar svaret geometrisk.
+
+::: {.losning}
+Sett $u = \dfrac{2\pi}{n}$, som går mot $0$ når $n \to \infty$. Da er $\dfrac{n}{2} = \dfrac{\pi}{u}$, og
+$$
+A_n = \pi r^2\,\frac{\sin u}{u} \to \pi r^2\cdot 1 = \underline{\underline{\pi r^2}} .
+$$
+Når antall kanter vokser, fyller mangekanten sirkelen mer og mer, og arealet nærmer seg sirkelens areal.
+:::
+:::
+
+::::

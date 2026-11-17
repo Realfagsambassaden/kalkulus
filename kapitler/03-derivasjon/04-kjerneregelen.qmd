@@ -1,0 +1,156 @@
+---
+title: "Kjerneregelen"
+tema: derivasjon
+undertema: kjerneregelen
+---
+
+<!-- video: kommer (videoer/kalkulus/03-04-kjerneregelen) -->
+![Video kommer](../../bilder/video-kommer.png){fig-alt="Video kommer"}
+
+<!-- tillegg: Claude -->
+En ballong fylles slik at radien vokser med $2\ \mathrm{cm/s}$. Volumet avhenger av radien, og radien avhenger av tiden. Hvor fort vokser volumet? Vi har en kjede av avhengigheter: $t \to r \to V$. Endringsratene langs kjeden **ganges**. Det er kjerneregelen.
+
+## Regelen
+
+En sammensatt funksjon $f\big(g(x)\big)$ har en **ytre** funksjon $f$ og en **indre** funksjon $u = g(x)$, som vi kaller **kjernen**.
+
+::: {.callout-important title="Kjerneregelen"}
+$$
+\frac{\mathrm{d}}{\mathrm{d}x}\,f\big(g(x)\big) = f'\big(g(x)\big)\cdot g'(x),
+$$
+eller med $y = f(u)$ og $u = g(x)$:
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}y}{\mathrm{d}u}\cdot\frac{\mathrm{d}u}{\mathrm{d}x} .
+$$
+:::
+
+I ord: **Deriver den ytre funksjonen og la kjernen stå, og gang med den deriverte av kjernen.**
+
+Leibniz' skrivemåte gjør regelen rimelig: Øker $x$ litt, øker $u$ omtrent $\dfrac{\mathrm{d}u}{\mathrm{d}x}$ ganger så mye, og $y$ omtrent $\dfrac{\mathrm{d}y}{\mathrm{d}u}$ ganger det igjen. Går et tannhjul tre ganger så fort som det neste, og det neste dobbelt så fort som det tredje, går det første seks ganger så fort som det tredje. (Det er ikke et bevis, fordi $\mathrm{d}u$ ikke er et tall vi kan forkorte. Et bevis bruker [linearisering](../04-anvendelser-derivasjon/02-linearisering.qmd): $g(x + h) \approx g(x) + g'(x)h$ og $f(u + k) \approx f(u) + f'(u)k$.)
+
+::: {.eksempel}
+**Eksempel: Potens av en kjerne.** Deriver $y = (3x^2 - 5)^7$.
+
+::: {.losning}
+Kjernen er $u = 3x^2 - 5$ og den ytre funksjonen er $u^7$:
+$$
+y' = 7u^6\cdot u' = 7(3x^2 - 5)^6\cdot 6x = 42x(3x^2 - 5)^6 .
+$$
+Å gange ut $(3x^2 - 5)^7$ først ville gitt åtte ledd. Kjerneregelen sparer mye arbeid.
+:::
+:::
+
+::: {.eksempel}
+**Eksempel: Rot og brøk.** Deriver a) $f(x) = \sqrt{1 + x^2}$ b) $g(x) = \dfrac{1}{(2x - 3)^4}$
+
+::: {.losning}
+a) $f(x) = (1 + x^2)^{1/2}$:
+$$
+f'(x) = \frac12(1 + x^2)^{-1/2}\cdot 2x = \frac{x}{\sqrt{1 + x^2}} .
+$$
+
+b) $g(x) = (2x - 3)^{-4}$:
+$$
+g'(x) = -4(2x - 3)^{-5}\cdot 2 = -\frac{8}{(2x - 3)^5} .
+$$
+Med kvotientregelen hadde vi fått det samme, men med mer regning.
+:::
+:::
+
+## Ballongen
+
+::: {.eksempel}
+**Eksempel: Ballongen.** Radien til en kuleformet ballong vokser med $\dfrac{\mathrm{d}r}{\mathrm{d}t} = 2.0\ \mathrm{cm/s}$. Hvor fort vokser volumet når $r = 10\ \mathrm{cm}$?
+
+::: {.losning}
+$V = \dfrac43\pi r^3$, så $\dfrac{\mathrm{d}V}{\mathrm{d}r} = 4\pi r^2$ (overflatearealet). Kjerneregelen gir
+$$
+\frac{\mathrm{d}V}{\mathrm{d}t} = \frac{\mathrm{d}V}{\mathrm{d}r}\cdot\frac{\mathrm{d}r}{\mathrm{d}t} = 4\pi r^2\cdot\frac{\mathrm{d}r}{\mathrm{d}t} = 4\pi\cdot 10^2\cdot 2.0\ \mathrm{cm^3/s} = \underline{\underline{2.5\cdot 10^3\ \mathrm{cm^3/s}}} .
+$$
+Det gir mening: Et tynt skall med areal $4\pi r^2$ og tykkelse $\mathrm{d}r$ har volum $4\pi r^2\,\mathrm{d}r$.
+:::
+:::
+
+Slike oppgaver, der flere størrelser endrer seg med tiden og henger sammen, kalles [relaterte endringsrater](../04-anvendelser-derivasjon/01-relaterte-rater.qmd).
+
+## Lange kjeder
+
+Kjerneregelen kan brukes flere ganger etter hverandre. Begynn ytterst og arbeid deg innover, ett lag om gangen.
+
+::: {.eksempel}
+**Eksempel: To lag.** Deriver $y = \sqrt{1 + (1 + x^3)^4}$.
+
+::: {.losning}
+Ytterst er roten, så fjerdepotensen, og innerst $1 + x^3$:
+$$
+y' = \frac{1}{2\sqrt{1 + (1 + x^3)^4}}\cdot 4(1 + x^3)^3\cdot 3x^2 = \frac{6x^2(1 + x^3)^3}{\sqrt{1 + (1 + x^3)^4}} .
+$$
+:::
+:::
+
+::: {.callout-tip title="Til ettertanke"}
+Vi har $\dfrac{\mathrm{d}}{\mathrm{d}x}\big(f(x)\big)^2 = 2f(x)f'(x)$. Hvor kommer faktoren $f'(x)$ fra, og hvorfor er det lett å glemme den? Prøv med $f(x) = 3x$: Hva er den deriverte av $(3x)^2 = 9x^2$?
+:::
+
+## Prøv selv
+
+```{.python .kjor}
+import numpy as np
+
+y  = lambda x: np.sqrt(1 + (1 + x**3)**4)
+dy = lambda x: 6 * x**2 * (1 + x**3)**3 / np.sqrt(1 + (1 + x**3)**4)   # kjerneregelen
+
+h = 1e-6
+for x in [-0.5, 0.3, 1.0]:
+    print(f"x = {x:5}:  formel {dy(x):.6f},  numerisk {(y(x + h) - y(x - h)) / (2 * h):.6f}")
+```
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Deriver"}
+a) $(5 - 2x)^{10}$ b) $\sqrt[3]{x^2 + 4}$ c) $\dfrac{3}{\sqrt{1 - x^2}}$ d) $x^2(x + 1)^5$
+
+::: {.losning}
+a) $10(5 - 2x)^9\cdot(-2) = -20(5 - 2x)^9$
+
+b) $\dfrac13(x^2 + 4)^{-2/3}\cdot 2x = \dfrac{2x}{3\sqrt[3]{(x^2 + 4)^2}}$
+
+c) $3(1 - x^2)^{-1/2}$ gir $3\cdot\left(-\dfrac12\right)(1 - x^2)^{-3/2}\cdot(-2x) = \dfrac{3x}{(1 - x^2)^{3/2}}$
+
+d) Produkt- og kjerneregelen: $2x(x + 1)^5 + 5x^2(x + 1)^4 = x(x + 1)^4\big(2(x + 1) + 5x\big) = x(x + 1)^4(7x + 2)$
+:::
+:::
+
+::: {.oppgave tittel="Fra en tabell"}
+Vi vet at $g(2) = 5$, $g'(2) = -3$ og $f'(5) = 4$. Finn $\dfrac{\mathrm{d}}{\mathrm{d}x}f\big(g(x)\big)$ i $x = 2$.
+
+::: {.losning}
+$f'\big(g(2)\big)\cdot g'(2) = f'(5)\cdot(-3) = 4\cdot(-3) = \underline{\underline{-12}}$
+:::
+:::
+
+::: {.oppgave tittel="Pendelen" niva="Middels"}
+Svingetiden til en pendel er $T = 2\pi\sqrt{\dfrac{L}{\mathrm{g}}}$. Pendelen varmes opp, og lengden øker med $\dfrac{\mathrm{d}L}{\mathrm{d}t} = 1.2\cdot 10^{-5}\ \mathrm{m/h}$. Hvor fort endrer svingetiden seg når $L = 1.00\ \mathrm{m}$? Bruk $\mathrm{g} = 9.81\ \mathrm{m/s^2}$.
+
+::: {.losning}
+$\dfrac{\mathrm{d}T}{\mathrm{d}L} = \dfrac{2\pi}{\sqrt{\mathrm{g}}}\cdot\dfrac{1}{2\sqrt{L}} = \dfrac{\pi}{\sqrt{\mathrm{g}L}}$. Med $L = 1.00\ \mathrm{m}$ er dette $\dfrac{\pi}{\sqrt{9.81}}\ \mathrm{s/m} = 1.003\ \mathrm{s/m}$. Da er
+$$
+\frac{\mathrm{d}T}{\mathrm{d}t} = 1.003\ \mathrm{s/m}\cdot 1.2\cdot 10^{-5}\ \mathrm{m/h} = \underline{\underline{1.2\cdot 10^{-5}\ \mathrm{s/h}}} .
+$$
+Over et døgn blir svingetiden ca. $0.3\ \mathrm{ms}$ lengre, og en pendelklokke vil gå litt for sakte.
+:::
+:::
+
+::: {.oppgave tittel="Like og odde" niva="Utfordrende"}
+Vis med kjerneregelen at den deriverte av en like funksjon er odde, og at den deriverte av en odde funksjon er like.
+
+::: {.losning}
+Er $f$ like, er $f(-x) = f(x)$. Deriverer vi begge sider (kjernen $-x$ har derivert $-1$), får vi $-f'(-x) = f'(x)$, altså $f'(-x) = -f'(x)$: $f'$ er odde.
+
+Er $f$ odde, er $f(-x) = -f(x)$. Derivasjon gir $-f'(-x) = -f'(x)$, altså $f'(-x) = f'(x)$: $f'$ er like.
+
+Eksempel: $\cos x$ er like og $(\cos x)' = -\sin x$ er odde.
+:::
+:::
+
+::::
