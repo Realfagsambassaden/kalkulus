@@ -1,0 +1,8 @@
+\begin{tikzpicture}[scale=1.8]
+\draw[akse] (-0.2,0) -- (3.6,0) node[right] {$x$};
+\draw[akse] (0,-1.0) -- (0,2.4) node[above] {$y$};
+\draw[very thick,bla,domain=0.6:3.2,samples=60] plot (\x,{0.9*(\x-1.6)+0.25*(\x-1.6)^2}) node[right] {$f$};
+\draw[very thick,rod,domain=0.4:3.2,samples=60] plot (\x,{0.45*(\x-1.6)-0.08*(\x-1.6)^2}) node[right] {$g$};
+\draw[thick,dashed,bla] (1.0,-0.54) -- (2.6,0.9); \draw[thick,dashed,rod] (0.6,-0.45) -- (2.8,0.54);
+\fill (1.6,0) circle (1.3pt) node[below right] {$a$};
+\end{tikzpicture}

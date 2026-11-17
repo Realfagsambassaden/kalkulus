@@ -2,15 +2,67 @@
 title: "Sammensatte oppgaver: anvendelser av derivasjon"
 tema: anvendelser-derivasjon
 undertema: oppgaver
-plassholder: true
 ---
 
 <!-- tillegg: Claude -->
-::: {.callout-note title="Kommer snart"}
-Denne siden skrives nå. Innholdet kommer snart.
+Oppgavene kombinerer verktøyene fra hele temaet: drøfting, optimering, linearisering, L'Hôpital og Newtons metode. Ofte er den største utfordringen å sette opp funksjonen.
+
+:::: {.oppgaver}
+
+::: {.oppgave tittel="Vindu med halvsirkel" krever="anvendelser-derivasjon/optimering"}
+Et vindu består av et rektangel med en halvsirkel oppå. Omkretsen skal være $6.0\ \mathrm{m}$. Hvilke mål slipper inn mest lys (størst areal)?
+
+::: {.losning}
+La bredden være $2r$ og høyden på rektangelet $h$. Omkrets: $2r + 2h + \pi r = 6.0$, så $h = 3.0 - r - \dfrac{\pi r}{2}$. Areal:
+$$
+A(r) = 2rh + \frac{\pi r^2}{2} = 6.0r - 2r^2 - \pi r^2 + \frac{\pi r^2}{2} = 6.0r - \left(2 + \frac{\pi}{2}\right)r^2 .
+$$
+$A'(r) = 6.0 - (4 + \pi)r = 0$ gir $r = \dfrac{6.0}{4 + \pi} = 0.840\ \mathrm{m}$, og $h = 3.0 - 0.840 - 1.320 = 0.840\ \mathrm{m}$. Bredden er $\underline{\underline{1.68\ \mathrm{m}}}$ og rektangelets høyde $\underline{\underline{0.84\ \mathrm{m}}}$, altså lik radien.
+:::
 :::
 
-## Dette kommer på siden
+::: {.oppgave tittel="Toppen av et uttrykk" niva="Middels" krever="anvendelser-derivasjon/drofting, anvendelser-derivasjon/lhopital"}
+La $f(x) = \dfrac{\ln x}{x}$ for $x > 0$.
 
-- Optimering kombinert med drøfting
-- Linearisering og Newtons metode på samme problem
+a) Finn grensene når $x \to 0^+$ og $x \to \infty$.
+
+b) Finn toppunktet, og bruk det til å avgjøre hvilket tall som er størst av $\mathrm{e}^\pi$ og $\pi^\mathrm{e}$.
+
+::: {.losning}
+a) Når $x \to 0^+$, går $\ln x \to -\infty$ og $\dfrac1x \to \infty$, så $f(x) \to -\infty$. Når $x \to \infty$ gir L'Hôpital $\dfrac{1/x}{1} \to 0$.
+
+b) $f'(x) = \dfrac{1 - \ln x}{x^2}$, null i $x = \mathrm{e}$, positiv før og negativ etter. Toppunktet er $\left(\mathrm{e}, \tfrac{1}{\mathrm{e}}\right)$, så $f(\pi) < f(\mathrm{e})$:
+$$
+\frac{\ln\pi}{\pi} < \frac{\ln\mathrm{e}}{\mathrm{e}} \;\Longrightarrow\; \mathrm{e}\ln\pi < \pi\ln\mathrm{e} \;\Longrightarrow\; \pi^\mathrm{e} < \mathrm{e}^\pi .
+$$
+$\mathrm{e}^\pi$ er størst ($23.14$ mot $22.46$).
+:::
+:::
+
+::: {.oppgave tittel="Hvor langt kan kula kastes?" niva="Middels" krever="anvendelser-derivasjon/optimering, anvendelser-derivasjon/newtons-metode"}
+En kule kastes med farten $v_0 = 14\ \mathrm{m/s}$ fra høyden $h = 2.0\ \mathrm{m}$ med vinkelen $\theta$. Lengden er
+$$
+R(\theta) = \frac{v_0\cos\theta}{\mathrm{g}}\left(v_0\sin\theta + \sqrt{v_0^2\sin^2\theta + 2\mathrm{g}h}\right) .
+$$
+Finn vinkelen som gir lengst kast, numerisk. Bruk $\mathrm{g} = 9.81\ \mathrm{m/s^2}$. Hvorfor er den mindre enn $45^\circ$?
+
+::: {.losning}
+Vi kan løse $R'(\theta) = 0$ med Newtons metode på en numerisk derivert, eller lete gjennom vinklene. Resultatet er $\theta \approx \underline{\underline{42^\circ}}$, med $R \approx 21.9\ \mathrm{m}$ (mot $21.8\ \mathrm{m}$ ved $45^\circ$). Fordi kula starter over bakken, varer flukten litt lenger enn fra bakkenivå, og det lønner seg å bruke mer av farten vannrett. Optimal vinkel er $45^\circ$ bare når $h = 0$.
+:::
+:::
+
+::: {.oppgave tittel="Lineær tilnærming og feil" niva="Utfordrende" krever="anvendelser-derivasjon/linearisering, anvendelser-derivasjon/lhopital"}
+Lineariseringen av $\mathrm{e}^x$ i $0$ er $1 + x$.
+
+a) Bruk L'Hôpital til å vise at feilen $\mathrm{e}^x - (1 + x)$ oppfører seg som $\dfrac{x^2}{2}$ for små $x$, altså at $\displaystyle\lim_{x\to 0}\frac{\mathrm{e}^x - 1 - x}{x^2/2} = 1$.
+
+b) Hvor stor kan $|x|$ være hvis feilen skal være under $0.001$?
+
+::: {.losning}
+a) To ganger L'Hôpital: $\dfrac{\mathrm{e}^x - 1}{x} \to 1$, eller direkte $\dfrac{\mathrm{e}^x}{1} \to 1$.
+
+b) Feilen er omtrent $\dfrac{x^2}{2} < 0.001$, så $|x| < \sqrt{0.002} = \underline{\underline{0.045}}$. (Eksakt: For $x = 0.045$ er feilen $0.00103$, for $x = -0.045$ er den $0.00099$, så overslaget er godt.)
+:::
+:::
+
+::::
